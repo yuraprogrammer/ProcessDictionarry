@@ -5,7 +5,7 @@
  */
 package com.alexprom.entities.service;
 
-import com.alexprom.entities.ActSirieMixing;
+import com.alexprom.entities.process.ActSirieMixing;
 import com.alexprom.entities.service.exceptions.NonexistentEntityException;
 import com.alexprom.entities.service.exceptions.PreexistingEntityException;
 import java.io.Serializable;

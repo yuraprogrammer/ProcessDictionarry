@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.alexprom.entities;
+package com.alexprom.entities.process;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -47,7 +47,7 @@ public class ActSirieMixing implements Serializable {
     @Basic(optional = false)
     @Column(name = "sirieDensity")
     private BigDecimal sirieDensity;
-    @Column(name = "sirieMass")
+    @Column(name = "sirieMass", insertable=false, updatable=false)
     private BigDecimal sirieMass;
 
     public ActSirieMixing() {
