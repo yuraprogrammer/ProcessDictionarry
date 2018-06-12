@@ -19,99 +19,102 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Lenovo
+ * @author yura_
  */
 @Entity
 @Table(name = "v_actUPPG")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "VactUPPG.findAll", query = "SELECT v FROM VactUPPG v"),
-    @NamedQuery(name = "VactUPPG.findById", query = "SELECT v FROM VactUPPG v WHERE v.id = :id"),
-    @NamedQuery(name = "VactUPPG.findByADate", query = "SELECT v FROM VactUPPG v WHERE v.aDate = :aDate"),
-    @NamedQuery(name = "VactUPPG.findByAShift", query = "SELECT v FROM VactUPPG v WHERE v.aShift = :aShift"),
-    @NamedQuery(name = "VactUPPG.findByMainOper", query = "SELECT v FROM VactUPPG v WHERE v.mainOper = :mainOper"),
-    @NamedQuery(name = "VactUPPG.findBySlaveOper", query = "SELECT v FROM VactUPPG v WHERE v.slaveOper = :slaveOper"),
-    @NamedQuery(name = "VactUPPG.findByMassStartS", query = "SELECT v FROM VactUPPG v WHERE v.massStartS = :massStartS"),
-    @NamedQuery(name = "VactUPPG.findByVolumeStartS", query = "SELECT v FROM VactUPPG v WHERE v.volumeStartS = :volumeStartS"),
-    @NamedQuery(name = "VactUPPG.findByTempStartS", query = "SELECT v FROM VactUPPG v WHERE v.tempStartS = :tempStartS"),
-    @NamedQuery(name = "VactUPPG.findByDensityStartS", query = "SELECT v FROM VactUPPG v WHERE v.densityStartS = :densityStartS"),
-    @NamedQuery(name = "VactUPPG.findByMassStartB", query = "SELECT v FROM VactUPPG v WHERE v.massStartB = :massStartB"),
-    @NamedQuery(name = "VactUPPG.findByVolumeStartB", query = "SELECT v FROM VactUPPG v WHERE v.volumeStartB = :volumeStartB"),
-    @NamedQuery(name = "VactUPPG.findByTempStartB", query = "SELECT v FROM VactUPPG v WHERE v.tempStartB = :tempStartB"),
-    @NamedQuery(name = "VactUPPG.findByDensityStartB", query = "SELECT v FROM VactUPPG v WHERE v.densityStartB = :densityStartB"),
-    @NamedQuery(name = "VactUPPG.findByMassStartA", query = "SELECT v FROM VactUPPG v WHERE v.massStartA = :massStartA"),
-    @NamedQuery(name = "VactUPPG.findByVolumeStartA", query = "SELECT v FROM VactUPPG v WHERE v.volumeStartA = :volumeStartA"),
-    @NamedQuery(name = "VactUPPG.findByTempStartA", query = "SELECT v FROM VactUPPG v WHERE v.tempStartA = :tempStartA"),
-    @NamedQuery(name = "VactUPPG.findByDensityStartA", query = "SELECT v FROM VactUPPG v WHERE v.densityStartA = :densityStartA"),
-    @NamedQuery(name = "VactUPPG.findByMassEndS", query = "SELECT v FROM VactUPPG v WHERE v.massEndS = :massEndS"),
-    @NamedQuery(name = "VactUPPG.findByVolumeEndS", query = "SELECT v FROM VactUPPG v WHERE v.volumeEndS = :volumeEndS"),
-    @NamedQuery(name = "VactUPPG.findByTempEndS", query = "SELECT v FROM VactUPPG v WHERE v.tempEndS = :tempEndS"),
-    @NamedQuery(name = "VactUPPG.findByDensityEndS", query = "SELECT v FROM VactUPPG v WHERE v.densityEndS = :densityEndS"),
-    @NamedQuery(name = "VactUPPG.findByMassEndB", query = "SELECT v FROM VactUPPG v WHERE v.massEndB = :massEndB"),
-    @NamedQuery(name = "VactUPPG.findByVolumeEndB", query = "SELECT v FROM VactUPPG v WHERE v.volumeEndB = :volumeEndB"),
-    @NamedQuery(name = "VactUPPG.findByTempEndB", query = "SELECT v FROM VactUPPG v WHERE v.tempEndB = :tempEndB"),
-    @NamedQuery(name = "VactUPPG.findByDensityEndB", query = "SELECT v FROM VactUPPG v WHERE v.densityEndB = :densityEndB"),
-    @NamedQuery(name = "VactUPPG.findByMassEndA", query = "SELECT v FROM VactUPPG v WHERE v.massEndA = :massEndA"),
-    @NamedQuery(name = "VactUPPG.findByVolumeEndA", query = "SELECT v FROM VactUPPG v WHERE v.volumeEndA = :volumeEndA"),
-    @NamedQuery(name = "VactUPPG.findByTempEndA", query = "SELECT v FROM VactUPPG v WHERE v.tempEndA = :tempEndA"),
-    @NamedQuery(name = "VactUPPG.findByDensityEndA", query = "SELECT v FROM VactUPPG v WHERE v.densityEndA = :densityEndA"),
-    @NamedQuery(name = "VactUPPG.findByProcessingMass", query = "SELECT v FROM VactUPPG v WHERE v.processingMass = :processingMass"),
-    @NamedQuery(name = "VactUPPG.findByProcessingVolume", query = "SELECT v FROM VactUPPG v WHERE v.processingVolume = :processingVolume"),
-    @NamedQuery(name = "VactUPPG.findByBLFMass", query = "SELECT v FROM VactUPPG v WHERE v.bLFMass = :bLFMass"),
-    @NamedQuery(name = "VactUPPG.findByBLFVolume", query = "SELECT v FROM VactUPPG v WHERE v.bLFVolume = :bLFVolume"),
-    @NamedQuery(name = "VactUPPG.findByAKDGMass", query = "SELECT v FROM VactUPPG v WHERE v.aKDGMass = :aKDGMass"),
-    @NamedQuery(name = "VactUPPG.findByAKDFVolume", query = "SELECT v FROM VactUPPG v WHERE v.aKDFVolume = :aKDFVolume"),
-    @NamedQuery(name = "VactUPPG.findByBLFPercent", query = "SELECT v FROM VactUPPG v WHERE v.bLFPercent = :bLFPercent"),
-    @NamedQuery(name = "VactUPPG.findByAKDGPercent", query = "SELECT v FROM VactUPPG v WHERE v.aKDGPercent = :aKDGPercent"),
-    @NamedQuery(name = "VactUPPG.findByOTGPercent", query = "SELECT v FROM VactUPPG v WHERE v.oTGPercent = :oTGPercent"),
-    @NamedQuery(name = "VactUPPG.findByBLFAKDGPercent", query = "SELECT v FROM VactUPPG v WHERE v.bLFAKDGPercent = :bLFAKDGPercent"),
-    @NamedQuery(name = "VactUPPG.findByBLFAKDGOTGPercent", query = "SELECT v FROM VactUPPG v WHERE v.bLFAKDGOTGPercent = :bLFAKDGOTGPercent"),
-    @NamedQuery(name = "VactUPPG.findBySirieDensity20Start", query = "SELECT v FROM VactUPPG v WHERE v.sirieDensity20Start = :sirieDensity20Start"),
-    @NamedQuery(name = "VactUPPG.findBySirieDensity20End", query = "SELECT v FROM VactUPPG v WHERE v.sirieDensity20End = :sirieDensity20End"),
-    @NamedQuery(name = "VactUPPG.findByBlfDensity20Start", query = "SELECT v FROM VactUPPG v WHERE v.blfDensity20Start = :blfDensity20Start"),
-    @NamedQuery(name = "VactUPPG.findByBlfDensity20End", query = "SELECT v FROM VactUPPG v WHERE v.blfDensity20End = :blfDensity20End"),
-    @NamedQuery(name = "VactUPPG.findByAkdgDensity20Start", query = "SELECT v FROM VactUPPG v WHERE v.akdgDensity20Start = :akdgDensity20Start"),
-    @NamedQuery(name = "VactUPPG.findByAkdgDensity20End", query = "SELECT v FROM VactUPPG v WHERE v.akdgDensity20End = :akdgDensity20End"),
-    @NamedQuery(name = "VactUPPG.findByDrainStartLevel", query = "SELECT v FROM VactUPPG v WHERE v.drainStartLevel = :drainStartLevel"),
-    @NamedQuery(name = "VactUPPG.findByDrainFinishLevel", query = "SELECT v FROM VactUPPG v WHERE v.drainFinishLevel = :drainFinishLevel"),
-    @NamedQuery(name = "VactUPPG.findByDrainDensity", query = "SELECT v FROM VactUPPG v WHERE v.drainDensity = :drainDensity"),
-    @NamedQuery(name = "VactUPPG.findByDrainVolume", query = "SELECT v FROM VactUPPG v WHERE v.drainVolume = :drainVolume"),
-    @NamedQuery(name = "VactUPPG.findByDrainMass", query = "SELECT v FROM VactUPPG v WHERE v.drainMass = :drainMass"),
-    @NamedQuery(name = "VactUPPG.findByDrained", query = "SELECT v FROM VactUPPG v WHERE v.drained = :drained"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartLevel", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartLevel = :otguppgstartLevel"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgfinishLevel", query = "SELECT v FROM VactUPPG v WHERE v.otguppgfinishLevel = :otguppgfinishLevel"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartVolume", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartVolume = :otguppgstartVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendVolume", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendVolume = :otguppgendVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartMass", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartMass = :otguppgstartMass"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendMass", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendMass = :otguppgendMass"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartDensity", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartDensity = :otguppgstartDensity"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendDensity", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendDensity = :otguppgendDensity"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartDensity20", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartDensity20 = :otguppgstartDensity20"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendDensity20", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendDensity20 = :otguppgendDensity20"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgVolume", query = "SELECT v FROM VactUPPG v WHERE v.otguppgVolume = :otguppgVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgMass", query = "SELECT v FROM VactUPPG v WHERE v.otguppgMass = :otguppgMass"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartTemp", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartTemp = :otguppgstartTemp"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendTemp", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendTemp = :otguppgendTemp"),
-    @NamedQuery(name = "VactUPPG.findByOtgtspVolume", query = "SELECT v FROM VactUPPG v WHERE v.otgtspVolume = :otgtspVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtgtspMass", query = "SELECT v FROM VactUPPG v WHERE v.otgtspMass = :otgtspMass"),
-    @NamedQuery(name = "VactUPPG.findByFeedstartData", query = "SELECT v FROM VactUPPG v WHERE v.feedstartData = :feedstartData"),
-    @NamedQuery(name = "VactUPPG.findByFeedfinishData", query = "SELECT v FROM VactUPPG v WHERE v.feedfinishData = :feedfinishData"),
-    @NamedQuery(name = "VactUPPG.findByFeedTotal", query = "SELECT v FROM VactUPPG v WHERE v.feedTotal = :feedTotal"),
-    @NamedQuery(name = "VactUPPG.findByComponent1", query = "SELECT v FROM VactUPPG v WHERE v.component1 = :component1"),
-    @NamedQuery(name = "VactUPPG.findByPercent1", query = "SELECT v FROM VactUPPG v WHERE v.percent1 = :percent1"),
-    @NamedQuery(name = "VactUPPG.findByComponent2", query = "SELECT v FROM VactUPPG v WHERE v.component2 = :component2"),
-    @NamedQuery(name = "VactUPPG.findByPercent2", query = "SELECT v FROM VactUPPG v WHERE v.percent2 = :percent2"),
-    @NamedQuery(name = "VactUPPG.findByComponent3", query = "SELECT v FROM VactUPPG v WHERE v.component3 = :component3"),
-    @NamedQuery(name = "VactUPPG.findByPercent3", query = "SELECT v FROM VactUPPG v WHERE v.percent3 = :percent3"),
-    @NamedQuery(name = "VactUPPG.findByComponent4", query = "SELECT v FROM VactUPPG v WHERE v.component4 = :component4"),
-    @NamedQuery(name = "VactUPPG.findByPercent4", query = "SELECT v FROM VactUPPG v WHERE v.percent4 = :percent4"),
-    @NamedQuery(name = "VactUPPG.findByComponent5", query = "SELECT v FROM VactUPPG v WHERE v.component5 = :component5"),
-    @NamedQuery(name = "VactUPPG.findByPercent5", query = "SELECT v FROM VactUPPG v WHERE v.percent5 = :percent5"),
-    @NamedQuery(name = "VactUPPG.findByWasteGases", query = "SELECT v FROM VactUPPG v WHERE v.wasteGases = :wasteGases"),
-    @NamedQuery(name = "VactUPPG.findByDrainedBLF", query = "SELECT v FROM VactUPPG v WHERE v.drainedBLF = :drainedBLF"),
-    @NamedQuery(name = "VactUPPG.findByPercent6", query = "SELECT v FROM VactUPPG v WHERE v.percent6 = :percent6"),
-    @NamedQuery(name = "VactUPPG.findByComponent6", query = "SELECT v FROM VactUPPG v WHERE v.component6 = :component6"),
-    @NamedQuery(name = "VactUPPG.findByTankName", query = "SELECT v FROM VactUPPG v WHERE v.tankName = :tankName")})
+    @NamedQuery(name = "VactUPPG_1.findAll", query = "SELECT v FROM VactUPPG_1 v"),
+    @NamedQuery(name = "VactUPPG_1.findById", query = "SELECT v FROM VactUPPG_1 v WHERE v.id = :id"),
+    @NamedQuery(name = "VactUPPG_1.findByADate", query = "SELECT v FROM VactUPPG_1 v WHERE v.aDate = :aDate"),
+    @NamedQuery(name = "VactUPPG_1.findByAShift", query = "SELECT v FROM VactUPPG_1 v WHERE v.aShift = :aShift"),
+    @NamedQuery(name = "VactUPPG_1.findByMainOper", query = "SELECT v FROM VactUPPG_1 v WHERE v.mainOper = :mainOper"),
+    @NamedQuery(name = "VactUPPG_1.findBySlaveOper", query = "SELECT v FROM VactUPPG_1 v WHERE v.slaveOper = :slaveOper"),
+    @NamedQuery(name = "VactUPPG_1.findByMassStartS", query = "SELECT v FROM VactUPPG_1 v WHERE v.massStartS = :massStartS"),
+    @NamedQuery(name = "VactUPPG_1.findByVolumeStartS", query = "SELECT v FROM VactUPPG_1 v WHERE v.volumeStartS = :volumeStartS"),
+    @NamedQuery(name = "VactUPPG_1.findByTempStartS", query = "SELECT v FROM VactUPPG_1 v WHERE v.tempStartS = :tempStartS"),
+    @NamedQuery(name = "VactUPPG_1.findByDensityStartS", query = "SELECT v FROM VactUPPG_1 v WHERE v.densityStartS = :densityStartS"),
+    @NamedQuery(name = "VactUPPG_1.findByMassStartB", query = "SELECT v FROM VactUPPG_1 v WHERE v.massStartB = :massStartB"),
+    @NamedQuery(name = "VactUPPG_1.findByVolumeStartB", query = "SELECT v FROM VactUPPG_1 v WHERE v.volumeStartB = :volumeStartB"),
+    @NamedQuery(name = "VactUPPG_1.findByTempStartB", query = "SELECT v FROM VactUPPG_1 v WHERE v.tempStartB = :tempStartB"),
+    @NamedQuery(name = "VactUPPG_1.findByDensityStartB", query = "SELECT v FROM VactUPPG_1 v WHERE v.densityStartB = :densityStartB"),
+    @NamedQuery(name = "VactUPPG_1.findByMassStartA", query = "SELECT v FROM VactUPPG_1 v WHERE v.massStartA = :massStartA"),
+    @NamedQuery(name = "VactUPPG_1.findByVolumeStartA", query = "SELECT v FROM VactUPPG_1 v WHERE v.volumeStartA = :volumeStartA"),
+    @NamedQuery(name = "VactUPPG_1.findByTempStartA", query = "SELECT v FROM VactUPPG_1 v WHERE v.tempStartA = :tempStartA"),
+    @NamedQuery(name = "VactUPPG_1.findByDensityStartA", query = "SELECT v FROM VactUPPG_1 v WHERE v.densityStartA = :densityStartA"),
+    @NamedQuery(name = "VactUPPG_1.findByMassEndS", query = "SELECT v FROM VactUPPG_1 v WHERE v.massEndS = :massEndS"),
+    @NamedQuery(name = "VactUPPG_1.findByVolumeEndS", query = "SELECT v FROM VactUPPG_1 v WHERE v.volumeEndS = :volumeEndS"),
+    @NamedQuery(name = "VactUPPG_1.findByTempEndS", query = "SELECT v FROM VactUPPG_1 v WHERE v.tempEndS = :tempEndS"),
+    @NamedQuery(name = "VactUPPG_1.findByDensityEndS", query = "SELECT v FROM VactUPPG_1 v WHERE v.densityEndS = :densityEndS"),
+    @NamedQuery(name = "VactUPPG_1.findByMassEndB", query = "SELECT v FROM VactUPPG_1 v WHERE v.massEndB = :massEndB"),
+    @NamedQuery(name = "VactUPPG_1.findByVolumeEndB", query = "SELECT v FROM VactUPPG_1 v WHERE v.volumeEndB = :volumeEndB"),
+    @NamedQuery(name = "VactUPPG_1.findByTempEndB", query = "SELECT v FROM VactUPPG_1 v WHERE v.tempEndB = :tempEndB"),
+    @NamedQuery(name = "VactUPPG_1.findByDensityEndB", query = "SELECT v FROM VactUPPG_1 v WHERE v.densityEndB = :densityEndB"),
+    @NamedQuery(name = "VactUPPG_1.findByMassEndA", query = "SELECT v FROM VactUPPG_1 v WHERE v.massEndA = :massEndA"),
+    @NamedQuery(name = "VactUPPG_1.findByVolumeEndA", query = "SELECT v FROM VactUPPG_1 v WHERE v.volumeEndA = :volumeEndA"),
+    @NamedQuery(name = "VactUPPG_1.findByTempEndA", query = "SELECT v FROM VactUPPG_1 v WHERE v.tempEndA = :tempEndA"),
+    @NamedQuery(name = "VactUPPG_1.findByDensityEndA", query = "SELECT v FROM VactUPPG_1 v WHERE v.densityEndA = :densityEndA"),
+    @NamedQuery(name = "VactUPPG_1.findByProcessingMass", query = "SELECT v FROM VactUPPG_1 v WHERE v.processingMass = :processingMass"),
+    @NamedQuery(name = "VactUPPG_1.findByProcessingVolume", query = "SELECT v FROM VactUPPG_1 v WHERE v.processingVolume = :processingVolume"),
+    @NamedQuery(name = "VactUPPG_1.findByBLFMass", query = "SELECT v FROM VactUPPG_1 v WHERE v.bLFMass = :bLFMass"),
+    @NamedQuery(name = "VactUPPG_1.findByBLFVolume", query = "SELECT v FROM VactUPPG_1 v WHERE v.bLFVolume = :bLFVolume"),
+    @NamedQuery(name = "VactUPPG_1.findByAKDGMass", query = "SELECT v FROM VactUPPG_1 v WHERE v.aKDGMass = :aKDGMass"),
+    @NamedQuery(name = "VactUPPG_1.findByAKDFVolume", query = "SELECT v FROM VactUPPG_1 v WHERE v.aKDFVolume = :aKDFVolume"),
+    @NamedQuery(name = "VactUPPG_1.findByBLFPercent", query = "SELECT v FROM VactUPPG_1 v WHERE v.bLFPercent = :bLFPercent"),
+    @NamedQuery(name = "VactUPPG_1.findByAKDGPercent", query = "SELECT v FROM VactUPPG_1 v WHERE v.aKDGPercent = :aKDGPercent"),
+    @NamedQuery(name = "VactUPPG_1.findByOTGPercent", query = "SELECT v FROM VactUPPG_1 v WHERE v.oTGPercent = :oTGPercent"),
+    @NamedQuery(name = "VactUPPG_1.findByBLFAKDGPercent", query = "SELECT v FROM VactUPPG_1 v WHERE v.bLFAKDGPercent = :bLFAKDGPercent"),
+    @NamedQuery(name = "VactUPPG_1.findByBLFAKDGOTGPercent", query = "SELECT v FROM VactUPPG_1 v WHERE v.bLFAKDGOTGPercent = :bLFAKDGOTGPercent"),
+    @NamedQuery(name = "VactUPPG_1.findBySirieDensity20Start", query = "SELECT v FROM VactUPPG_1 v WHERE v.sirieDensity20Start = :sirieDensity20Start"),
+    @NamedQuery(name = "VactUPPG_1.findBySirieDensity20End", query = "SELECT v FROM VactUPPG_1 v WHERE v.sirieDensity20End = :sirieDensity20End"),
+    @NamedQuery(name = "VactUPPG_1.findByBlfDensity20Start", query = "SELECT v FROM VactUPPG_1 v WHERE v.blfDensity20Start = :blfDensity20Start"),
+    @NamedQuery(name = "VactUPPG_1.findByBlfDensity20End", query = "SELECT v FROM VactUPPG_1 v WHERE v.blfDensity20End = :blfDensity20End"),
+    @NamedQuery(name = "VactUPPG_1.findByAkdgDensity20Start", query = "SELECT v FROM VactUPPG_1 v WHERE v.akdgDensity20Start = :akdgDensity20Start"),
+    @NamedQuery(name = "VactUPPG_1.findByAkdgDensity20End", query = "SELECT v FROM VactUPPG_1 v WHERE v.akdgDensity20End = :akdgDensity20End"),
+    @NamedQuery(name = "VactUPPG_1.findByDrainStartLevel", query = "SELECT v FROM VactUPPG_1 v WHERE v.drainStartLevel = :drainStartLevel"),
+    @NamedQuery(name = "VactUPPG_1.findByDrainFinishLevel", query = "SELECT v FROM VactUPPG_1 v WHERE v.drainFinishLevel = :drainFinishLevel"),
+    @NamedQuery(name = "VactUPPG_1.findByDrainDensity", query = "SELECT v FROM VactUPPG_1 v WHERE v.drainDensity = :drainDensity"),
+    @NamedQuery(name = "VactUPPG_1.findByDrainVolume", query = "SELECT v FROM VactUPPG_1 v WHERE v.drainVolume = :drainVolume"),
+    @NamedQuery(name = "VactUPPG_1.findByDrainMass", query = "SELECT v FROM VactUPPG_1 v WHERE v.drainMass = :drainMass"),
+    @NamedQuery(name = "VactUPPG_1.findByDrained", query = "SELECT v FROM VactUPPG_1 v WHERE v.drained = :drained"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgstartLevel", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgstartLevel = :otguppgstartLevel"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgfinishLevel", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgfinishLevel = :otguppgfinishLevel"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgstartVolume", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgstartVolume = :otguppgstartVolume"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgendVolume", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgendVolume = :otguppgendVolume"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgstartMass", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgstartMass = :otguppgstartMass"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgendMass", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgendMass = :otguppgendMass"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgstartDensity", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgstartDensity = :otguppgstartDensity"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgendDensity", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgendDensity = :otguppgendDensity"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgstartDensity20", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgstartDensity20 = :otguppgstartDensity20"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgendDensity20", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgendDensity20 = :otguppgendDensity20"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgVolume", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgVolume = :otguppgVolume"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgMass", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgMass = :otguppgMass"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgstartTemp", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgstartTemp = :otguppgstartTemp"),
+    @NamedQuery(name = "VactUPPG_1.findByOtguppgendTemp", query = "SELECT v FROM VactUPPG_1 v WHERE v.otguppgendTemp = :otguppgendTemp"),
+    @NamedQuery(name = "VactUPPG_1.findByOtgtspVolume", query = "SELECT v FROM VactUPPG_1 v WHERE v.otgtspVolume = :otgtspVolume"),
+    @NamedQuery(name = "VactUPPG_1.findByOtgtspMass", query = "SELECT v FROM VactUPPG_1 v WHERE v.otgtspMass = :otgtspMass"),
+    @NamedQuery(name = "VactUPPG_1.findByFeedstartData", query = "SELECT v FROM VactUPPG_1 v WHERE v.feedstartData = :feedstartData"),
+    @NamedQuery(name = "VactUPPG_1.findByFeedfinishData", query = "SELECT v FROM VactUPPG_1 v WHERE v.feedfinishData = :feedfinishData"),
+    @NamedQuery(name = "VactUPPG_1.findByFeedTotal", query = "SELECT v FROM VactUPPG_1 v WHERE v.feedTotal = :feedTotal"),
+    @NamedQuery(name = "VactUPPG_1.findByComponent1", query = "SELECT v FROM VactUPPG_1 v WHERE v.component1 = :component1"),
+    @NamedQuery(name = "VactUPPG_1.findByPercent1", query = "SELECT v FROM VactUPPG_1 v WHERE v.percent1 = :percent1"),
+    @NamedQuery(name = "VactUPPG_1.findByComponent2", query = "SELECT v FROM VactUPPG_1 v WHERE v.component2 = :component2"),
+    @NamedQuery(name = "VactUPPG_1.findByPercent2", query = "SELECT v FROM VactUPPG_1 v WHERE v.percent2 = :percent2"),
+    @NamedQuery(name = "VactUPPG_1.findByComponent3", query = "SELECT v FROM VactUPPG_1 v WHERE v.component3 = :component3"),
+    @NamedQuery(name = "VactUPPG_1.findByPercent3", query = "SELECT v FROM VactUPPG_1 v WHERE v.percent3 = :percent3"),
+    @NamedQuery(name = "VactUPPG_1.findByComponent4", query = "SELECT v FROM VactUPPG_1 v WHERE v.component4 = :component4"),
+    @NamedQuery(name = "VactUPPG_1.findByPercent4", query = "SELECT v FROM VactUPPG_1 v WHERE v.percent4 = :percent4"),
+    @NamedQuery(name = "VactUPPG_1.findByComponent5", query = "SELECT v FROM VactUPPG_1 v WHERE v.component5 = :component5"),
+    @NamedQuery(name = "VactUPPG_1.findByPercent5", query = "SELECT v FROM VactUPPG_1 v WHERE v.percent5 = :percent5"),
+    @NamedQuery(name = "VactUPPG_1.findByWasteGases", query = "SELECT v FROM VactUPPG_1 v WHERE v.wasteGases = :wasteGases"),
+    @NamedQuery(name = "VactUPPG_1.findByDrainedBLF", query = "SELECT v FROM VactUPPG_1 v WHERE v.drainedBLF = :drainedBLF"),
+    @NamedQuery(name = "VactUPPG_1.findByPercent6", query = "SELECT v FROM VactUPPG_1 v WHERE v.percent6 = :percent6"),
+    @NamedQuery(name = "VactUPPG_1.findByComponent6", query = "SELECT v FROM VactUPPG_1 v WHERE v.component6 = :component6"),
+    @NamedQuery(name = "VactUPPG_1.findByTankName", query = "SELECT v FROM VactUPPG_1 v WHERE v.tankName = :tankName"),
+    @NamedQuery(name = "VactUPPG_1.findBySirieVolume", query = "SELECT v FROM VactUPPG_1 v WHERE v.sirieVolume = :sirieVolume"),
+    @NamedQuery(name = "VactUPPG_1.findBySirieDensity", query = "SELECT v FROM VactUPPG_1 v WHERE v.sirieDensity = :sirieDensity"),
+    @NamedQuery(name = "VactUPPG_1.findBySirieMass", query = "SELECT v FROM VactUPPG_1 v WHERE v.sirieMass = :sirieMass")})
 public class VactUPPG implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -349,6 +352,14 @@ public class VactUPPG implements Serializable {
     @Basic(optional = false)
     @Column(name = "Tank_Name")
     private String tankName;
+    @Basic(optional = false)
+    @Column(name = "sirieVolume")
+    private BigDecimal sirieVolume;
+    @Basic(optional = false)
+    @Column(name = "sirieDensity")
+    private BigDecimal sirieDensity;
+    @Column(name = "sirieMass")
+    private BigDecimal sirieMass;
 
     public VactUPPG() {
     }
@@ -1039,6 +1050,30 @@ public class VactUPPG implements Serializable {
 
     public void setTankName(String tankName) {
         this.tankName = tankName;
+    }
+
+    public BigDecimal getSirieVolume() {
+        return sirieVolume;
+    }
+
+    public void setSirieVolume(BigDecimal sirieVolume) {
+        this.sirieVolume = sirieVolume;
+    }
+
+    public BigDecimal getSirieDensity() {
+        return sirieDensity;
+    }
+
+    public void setSirieDensity(BigDecimal sirieDensity) {
+        this.sirieDensity = sirieDensity;
+    }
+
+    public BigDecimal getSirieMass() {
+        return sirieMass;
+    }
+
+    public void setSirieMass(BigDecimal sirieMass) {
+        this.sirieMass = sirieMass;
     }
     
 }
