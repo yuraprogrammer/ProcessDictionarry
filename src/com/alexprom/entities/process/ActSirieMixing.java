@@ -47,7 +47,7 @@ public class ActSirieMixing implements Serializable {
     @Basic(optional = false)
     @Column(name = "sirieDensity")
     private BigDecimal sirieDensity;
-    @Column(name = "sirieMass", insertable = false, updatable = false)
+    @Column(name = "sirieMass")
     private BigDecimal sirieMass;
 
     public ActSirieMixing() {
