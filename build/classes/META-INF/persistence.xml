@@ -22,6 +22,7 @@
     <class>com.alexprom.entities.process.VotgTspDetail</class>
     <class>com.alexprom.entities.process.VactUPPG</class>
     <class>com.alexprom.entities.ActSirieMixing</class>
+    <class>com.alexprom.entities.process.ActSirieMixing</class>
     <class>com.alexprom.entities.process.WasteGasesMax</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://176.105.202.29:1433;databaseName=Alexprom_ASUTP"/>

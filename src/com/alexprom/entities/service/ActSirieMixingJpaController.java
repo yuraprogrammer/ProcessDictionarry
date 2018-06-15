@@ -19,7 +19,7 @@ import javax.persistence.criteria.Root;
 
 /**
  *
- * @author Lenovo
+ * @author yura_
  */
 public class ActSirieMixingJpaController implements Serializable {
 

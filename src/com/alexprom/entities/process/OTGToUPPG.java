@@ -84,9 +84,9 @@ public class OTGToUPPG implements Serializable {
     @Basic(optional = false)
     @Column(name = "endDensity20")
     private BigDecimal endDensity20;
-    @Column(name = "otgToUppgVolume")
+    @Column(name = "otgToUppgVolume", insertable = false, updatable = false)
     private BigInteger otgToUppgVolume;
-    @Column(name = "otgToUppgMass")
+    @Column(name = "otgToUppgMass", insertable = false, updatable = false)
     private BigInteger otgToUppgMass;
     @Basic(optional = false)
     @Column(name = "startTemp")

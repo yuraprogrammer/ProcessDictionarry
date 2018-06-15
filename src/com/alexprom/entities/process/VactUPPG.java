@@ -115,6 +115,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class VactUPPG implements Serializable {
 
     @Basic(optional = false)
+    @Column(name = "Processing_Dinsity")
+    private BigDecimal processingDinsity;
+    @Basic(optional = false)
+    @Column(name = "BLF_Density")
+    private BigDecimal bLFDensity;
+    @Basic(optional = false)
+    @Column(name = "AKDG_Density")
+    private BigDecimal aKDGDensity;
+    @Basic(optional = false)
+    @Column(name = "OTG_Density")
+    private BigDecimal oTGDensity;
+
+    @Basic(optional = false)
+    @Column(name = "maxValue")
+    private BigDecimal maxValue;
+
+    @Basic(optional = false)
     @Column(name = "sirieVolume")
     private BigDecimal sirieVolume;
     @Basic(optional = false)
@@ -1072,6 +1089,46 @@ public class VactUPPG implements Serializable {
 
     public void setSirieMass(BigDecimal sirieMass) {
         this.sirieMass = sirieMass;
+    }
+
+    public BigDecimal getMaxValue() {
+        return maxValue;
+    }
+
+    public void setMaxValue(BigDecimal maxValue) {
+        this.maxValue = maxValue;
+    }
+
+    public BigDecimal getProcessingDinsity() {
+        return processingDinsity;
+    }
+
+    public void setProcessingDinsity(BigDecimal processingDinsity) {
+        this.processingDinsity = processingDinsity;
+    }
+
+    public BigDecimal getBLFDensity() {
+        return bLFDensity;
+    }
+
+    public void setBLFDensity(BigDecimal bLFDensity) {
+        this.bLFDensity = bLFDensity;
+    }
+
+    public BigDecimal getAKDGDensity() {
+        return aKDGDensity;
+    }
+
+    public void setAKDGDensity(BigDecimal aKDGDensity) {
+        this.aKDGDensity = aKDGDensity;
+    }
+
+    public BigDecimal getOTGDensity() {
+        return oTGDensity;
+    }
+
+    public void setOTGDensity(BigDecimal oTGDensity) {
+        this.oTGDensity = oTGDensity;
     }
     
 }

@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Lenovo
+ * @author yura_
  */
 @Entity
 @Table(name = "Act_SirieMixing")
@@ -47,7 +47,7 @@ public class ActSirieMixing implements Serializable {
     @Basic(optional = false)
     @Column(name = "sirieDensity")
     private BigDecimal sirieDensity;
-    @Column(name = "sirieMass", insertable=false, updatable=false)
+    @Column(name = "sirieMass", insertable = false, updatable = false)
     private BigDecimal sirieMass;
 
     public ActSirieMixing() {
@@ -126,7 +126,7 @@ public class ActSirieMixing implements Serializable {
 
     @Override
     public String toString() {
-        return "com.alexprom.entities.ActSirieMixing[ id=" + id + " ]";
+        return "com.alexprom.entities.process.ActSirieMixing[ id=" + id + " ]";
     }
     
 }

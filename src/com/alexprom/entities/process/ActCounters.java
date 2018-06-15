@@ -88,6 +88,7 @@ public class ActCounters implements Serializable {
     private BigDecimal oTGPercent;
 
     private static final long serialVersionUID = 1L;
+    
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
     @Column(name = "MassStart_S", nullable = false, precision = 18, scale = 4)
@@ -161,17 +162,17 @@ public class ActCounters implements Serializable {
     @Basic(optional = false)
     @Column(name = "DensityEnd_A", nullable = false, precision = 18, scale = 4)
     private BigDecimal densityEndA;
-    @Column(name = "Processing_Mass", precision = 19, scale = 4)
+    @Column(name = "Processing_Mass", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal processingMass;
-    @Column(name = "Processing_Volume", precision = 19, scale = 4)
+    @Column(name = "Processing_Volume", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal processingVolume;
-    @Column(name = "BLF_Mass", precision = 19, scale = 4)
+    @Column(name = "BLF_Mass", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal bLFMass;
-    @Column(name = "BLF_Volume", precision = 19, scale = 4)
+    @Column(name = "BLF_Volume", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal bLFVolume;
-    @Column(name = "AKDG_Mass", precision = 19, scale = 4)
+    @Column(name = "AKDG_Mass", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal aKDGMass;
-    @Column(name = "AKDF_Volume", precision = 19, scale = 4)
+    @Column(name = "AKDF_Volume", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal aKDFVolume;
 
     public ActCounters() {
@@ -536,6 +537,7 @@ public class ActCounters implements Serializable {
         this.bLFAKDGOTGPercent = bLFAKDGOTGPercent;
     }
 
+    
     public ActCounters(Long id, long actID, BigDecimal processingDinsity, BigDecimal bLFDensity, BigDecimal aKDGDensity, BigDecimal oTGDensity) {
         this.id = id;
         this.actID = actID;
@@ -576,5 +578,7 @@ public class ActCounters implements Serializable {
     public void setOTGDensity(BigDecimal oTGDensity) {
         this.oTGDensity = oTGDensity;
     }
+
+   
         
 }

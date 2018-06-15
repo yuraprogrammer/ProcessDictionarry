@@ -8,10 +8,10 @@ package com.alexprom.entities.process;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.Basic;
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Lenovo
+ * @author yura_
  */
 @Entity
 @Table(name = "wasteGases_Max")
@@ -29,10 +29,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @NamedQueries({
     @NamedQuery(name = "WasteGasesMax.findAll", query = "SELECT w FROM WasteGasesMax w"),
     @NamedQuery(name = "WasteGasesMax.findByADate", query = "SELECT w FROM WasteGasesMax w WHERE w.aDate = :aDate"),
-    @NamedQuery(name = "WasteGasesMax.findByAShift", query = "SELECT w FROM WasteGasesMax w WHERE w.aShift = :aShift"),
+    @NamedQuery(name = "WasteGasesMax.findByAShift", query = "SELECT w FROM WasteGasesMax w WHERE w.aShift = :aShift"),    
     @NamedQuery(name = "WasteGasesMax.findByATag", query = "SELECT w FROM WasteGasesMax w WHERE w.aTag = :aTag"),
-    @NamedQuery(name = "WasteGasesMax.findByMaxValue", query = "SELECT w FROM WasteGasesMax w WHERE w.maxValue = :maxValue"),
-    @NamedQuery(name = "WasteGasesMax.findById", query = "SELECT w FROM WasteGasesMax w WHERE w.id = :id")})
+    @NamedQuery(name = "WasteGasesMax.findByMaxValue", query = "SELECT w FROM WasteGasesMax w WHERE w.maxValue = :maxValue")})
 public class WasteGasesMax implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -46,16 +45,19 @@ public class WasteGasesMax implements Serializable {
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Column(name = "maxValue")
     private BigDecimal maxValue;
-    @Id
-    @Basic(optional = false)
-    @Column(name = "id")
-    private Long id;
+    
+    @EmbeddedId
+    private gasesId id;
 
-    public WasteGasesMax() {
+    public gasesId getId() {
+        return id;
     }
 
-    public WasteGasesMax(Long id) {
+    public void setId(gasesId id) {
         this.id = id;
+    }
+    
+    public WasteGasesMax() {
     }
 
     public Date getADate() {
@@ -89,38 +91,15 @@ public class WasteGasesMax implements Serializable {
     public void setMaxValue(BigDecimal maxValue) {
         this.maxValue = maxValue;
     }
+        
+}
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof WasteGasesMax)) {
-            return false;
-        }
-        WasteGasesMax other = (WasteGasesMax) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "com.alexprom.entities.process.WasteGasesMax[ id=" + id + " ]";
-    }
-    
+@Embeddable
+class gasesId{
+    @Column(name = "aDate")
+    @Temporal(TemporalType.DATE)
+    private Date aDate;
+    @Column(name = "aShift")
+    private Integer aShift;
 }
