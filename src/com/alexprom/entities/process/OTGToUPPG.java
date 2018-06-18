@@ -43,6 +43,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "OTGToUPPG.findByOtgToUppgMass", query = "SELECT o FROM OTGToUPPG o WHERE o.otgToUppgMass = :otgToUppgMass")})
 public class OTGToUPPG implements Serializable {
 
+    @Basic(optional = false)
+    @Column(name = "tankOrder")
+    private int tankOrder;
+
     @Id
     @Basic(optional = false)
     @Column(name = "ID")
@@ -297,5 +301,13 @@ public class OTGToUPPG implements Serializable {
     public void setEndTemp(BigDecimal endTemp) {
         this.endTemp = endTemp;
     }    
+
+    public int getTankOrder() {
+        return tankOrder;
+    }
+
+    public void setTankOrder(int tankOrder) {
+        this.tankOrder = tankOrder;
+    }
     
 }

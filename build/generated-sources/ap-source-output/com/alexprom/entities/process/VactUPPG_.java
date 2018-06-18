@@ -6,7 +6,7 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-18T10:59:07")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-18T14:49:26")
 @StaticMetamodel(VactUPPG.class)
 public class VactUPPG_ { 
 
@@ -20,12 +20,10 @@ public class VactUPPG_ {
     public static volatile SingularAttribute<VactUPPG, BigDecimal> akdgDensity20Start;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> tempStartB;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> bLFPercent;
-    public static volatile SingularAttribute<VactUPPG, Long> otguppgstartVolume;
     public static volatile SingularAttribute<VactUPPG, Double> percent1;
     public static volatile SingularAttribute<VactUPPG, Double> percent2;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> aKDGDensity;
     public static volatile SingularAttribute<VactUPPG, Double> percent3;
-    public static volatile SingularAttribute<VactUPPG, BigDecimal> otguppgendDensity20;
     public static volatile SingularAttribute<VactUPPG, Double> percent4;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> sirieMass;
     public static volatile SingularAttribute<VactUPPG, String> component5;
@@ -33,7 +31,6 @@ public class VactUPPG_ {
     public static volatile SingularAttribute<VactUPPG, BigDecimal> processingMass;
     public static volatile SingularAttribute<VactUPPG, Integer> feedstartData;
     public static volatile SingularAttribute<VactUPPG, String> component6;
-    public static volatile SingularAttribute<VactUPPG, BigDecimal> otguppgendDensity;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> drainMass;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> tempEndB;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> tempEndA;
@@ -42,7 +39,6 @@ public class VactUPPG_ {
     public static volatile SingularAttribute<VactUPPG, BigDecimal> massEndA;
     public static volatile SingularAttribute<VactUPPG, Double> percent6;
     public static volatile SingularAttribute<VactUPPG, String> tankName;
-    public static volatile SingularAttribute<VactUPPG, Long> otguppgendMass;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> bLFVolume;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> drainedBLF;
     public static volatile SingularAttribute<VactUPPG, Long> id;
@@ -56,18 +52,13 @@ public class VactUPPG_ {
     public static volatile SingularAttribute<VactUPPG, BigDecimal> akdgDensity20End;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> blfDensity20End;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> bLFAKDGPercent;
-    public static volatile SingularAttribute<VactUPPG, Long> otguppgstartLevel;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> sirieDensity;
-    public static volatile SingularAttribute<VactUPPG, Long> otguppgstartMass;
     public static volatile SingularAttribute<VactUPPG, Integer> feedTotal;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> tempStartS;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> sirieDensity20Start;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> blfDensity20Start;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> massStartS;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> processingVolume;
-    public static volatile SingularAttribute<VactUPPG, BigDecimal> otguppgendTemp;
-    public static volatile SingularAttribute<VactUPPG, Long> otguppgendVolume;
-    public static volatile SingularAttribute<VactUPPG, BigDecimal> otguppgstartDensity20;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> oTGPercent;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> densityEndA;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> densityEndB;
@@ -76,13 +67,11 @@ public class VactUPPG_ {
     public static volatile SingularAttribute<VactUPPG, BigDecimal> massStartB;
     public static volatile SingularAttribute<VactUPPG, BigInteger> otgtspVolume;
     public static volatile SingularAttribute<VactUPPG, BigInteger> otgtspMass;
-    public static volatile SingularAttribute<VactUPPG, BigDecimal> otguppgstartTemp;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> sirieDensity20End;
     public static volatile SingularAttribute<VactUPPG, String> aDate;
     public static volatile SingularAttribute<VactUPPG, String> mainOper;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> bLFAKDGOTGPercent;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> volumeStartS;
-    public static volatile SingularAttribute<VactUPPG, BigDecimal> otguppgstartDensity;
     public static volatile SingularAttribute<VactUPPG, Integer> drainStartLevel;
     public static volatile SingularAttribute<VactUPPG, Integer> drainVolume;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> oTGDensity;
@@ -99,7 +88,6 @@ public class VactUPPG_ {
     public static volatile SingularAttribute<VactUPPG, BigDecimal> processingDinsity;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> aKDFVolume;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> aKDGPercent;
-    public static volatile SingularAttribute<VactUPPG, Long> otguppgfinishLevel;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> drainDensity;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> aKDGMass;
     public static volatile SingularAttribute<VactUPPG, BigDecimal> volumeEndS;

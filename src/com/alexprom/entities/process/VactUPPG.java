@@ -28,89 +28,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "VactUPPG.findAll", query = "SELECT v FROM VactUPPG v"),
     @NamedQuery(name = "VactUPPG.findById", query = "SELECT v FROM VactUPPG v WHERE v.id = :id"),
     @NamedQuery(name = "VactUPPG.findByADate", query = "SELECT v FROM VactUPPG v WHERE v.aDate = :aDate"),
-    @NamedQuery(name = "VactUPPG.findByAShift", query = "SELECT v FROM VactUPPG v WHERE v.aShift = :aShift"),
-    @NamedQuery(name = "VactUPPG.findByMainOper", query = "SELECT v FROM VactUPPG v WHERE v.mainOper = :mainOper"),
-    @NamedQuery(name = "VactUPPG.findBySlaveOper", query = "SELECT v FROM VactUPPG v WHERE v.slaveOper = :slaveOper"),
-    @NamedQuery(name = "VactUPPG.findByMassStartS", query = "SELECT v FROM VactUPPG v WHERE v.massStartS = :massStartS"),
-    @NamedQuery(name = "VactUPPG.findByVolumeStartS", query = "SELECT v FROM VactUPPG v WHERE v.volumeStartS = :volumeStartS"),
-    @NamedQuery(name = "VactUPPG.findByTempStartS", query = "SELECT v FROM VactUPPG v WHERE v.tempStartS = :tempStartS"),
-    @NamedQuery(name = "VactUPPG.findByDensityStartS", query = "SELECT v FROM VactUPPG v WHERE v.densityStartS = :densityStartS"),
-    @NamedQuery(name = "VactUPPG.findByMassStartB", query = "SELECT v FROM VactUPPG v WHERE v.massStartB = :massStartB"),
-    @NamedQuery(name = "VactUPPG.findByVolumeStartB", query = "SELECT v FROM VactUPPG v WHERE v.volumeStartB = :volumeStartB"),
-    @NamedQuery(name = "VactUPPG.findByTempStartB", query = "SELECT v FROM VactUPPG v WHERE v.tempStartB = :tempStartB"),
-    @NamedQuery(name = "VactUPPG.findByDensityStartB", query = "SELECT v FROM VactUPPG v WHERE v.densityStartB = :densityStartB"),
-    @NamedQuery(name = "VactUPPG.findByMassStartA", query = "SELECT v FROM VactUPPG v WHERE v.massStartA = :massStartA"),
-    @NamedQuery(name = "VactUPPG.findByVolumeStartA", query = "SELECT v FROM VactUPPG v WHERE v.volumeStartA = :volumeStartA"),
-    @NamedQuery(name = "VactUPPG.findByTempStartA", query = "SELECT v FROM VactUPPG v WHERE v.tempStartA = :tempStartA"),
-    @NamedQuery(name = "VactUPPG.findByDensityStartA", query = "SELECT v FROM VactUPPG v WHERE v.densityStartA = :densityStartA"),
-    @NamedQuery(name = "VactUPPG.findByMassEndS", query = "SELECT v FROM VactUPPG v WHERE v.massEndS = :massEndS"),
-    @NamedQuery(name = "VactUPPG.findByVolumeEndS", query = "SELECT v FROM VactUPPG v WHERE v.volumeEndS = :volumeEndS"),
-    @NamedQuery(name = "VactUPPG.findByTempEndS", query = "SELECT v FROM VactUPPG v WHERE v.tempEndS = :tempEndS"),
-    @NamedQuery(name = "VactUPPG.findByDensityEndS", query = "SELECT v FROM VactUPPG v WHERE v.densityEndS = :densityEndS"),
-    @NamedQuery(name = "VactUPPG.findByMassEndB", query = "SELECT v FROM VactUPPG v WHERE v.massEndB = :massEndB"),
-    @NamedQuery(name = "VactUPPG.findByVolumeEndB", query = "SELECT v FROM VactUPPG v WHERE v.volumeEndB = :volumeEndB"),
-    @NamedQuery(name = "VactUPPG.findByTempEndB", query = "SELECT v FROM VactUPPG v WHERE v.tempEndB = :tempEndB"),
-    @NamedQuery(name = "VactUPPG.findByDensityEndB", query = "SELECT v FROM VactUPPG v WHERE v.densityEndB = :densityEndB"),
-    @NamedQuery(name = "VactUPPG.findByMassEndA", query = "SELECT v FROM VactUPPG v WHERE v.massEndA = :massEndA"),
-    @NamedQuery(name = "VactUPPG.findByVolumeEndA", query = "SELECT v FROM VactUPPG v WHERE v.volumeEndA = :volumeEndA"),
-    @NamedQuery(name = "VactUPPG.findByTempEndA", query = "SELECT v FROM VactUPPG v WHERE v.tempEndA = :tempEndA"),
-    @NamedQuery(name = "VactUPPG.findByDensityEndA", query = "SELECT v FROM VactUPPG v WHERE v.densityEndA = :densityEndA"),
-    @NamedQuery(name = "VactUPPG.findByProcessingMass", query = "SELECT v FROM VactUPPG v WHERE v.processingMass = :processingMass"),
-    @NamedQuery(name = "VactUPPG.findByProcessingVolume", query = "SELECT v FROM VactUPPG v WHERE v.processingVolume = :processingVolume"),
-    @NamedQuery(name = "VactUPPG.findByBLFMass", query = "SELECT v FROM VactUPPG v WHERE v.bLFMass = :bLFMass"),
-    @NamedQuery(name = "VactUPPG.findByBLFVolume", query = "SELECT v FROM VactUPPG v WHERE v.bLFVolume = :bLFVolume"),
-    @NamedQuery(name = "VactUPPG.findByAKDGMass", query = "SELECT v FROM VactUPPG v WHERE v.aKDGMass = :aKDGMass"),
-    @NamedQuery(name = "VactUPPG.findByAKDFVolume", query = "SELECT v FROM VactUPPG v WHERE v.aKDFVolume = :aKDFVolume"),
-    @NamedQuery(name = "VactUPPG.findByBLFPercent", query = "SELECT v FROM VactUPPG v WHERE v.bLFPercent = :bLFPercent"),
-    @NamedQuery(name = "VactUPPG.findByAKDGPercent", query = "SELECT v FROM VactUPPG v WHERE v.aKDGPercent = :aKDGPercent"),
-    @NamedQuery(name = "VactUPPG.findByOTGPercent", query = "SELECT v FROM VactUPPG v WHERE v.oTGPercent = :oTGPercent"),
-    @NamedQuery(name = "VactUPPG.findByBLFAKDGPercent", query = "SELECT v FROM VactUPPG v WHERE v.bLFAKDGPercent = :bLFAKDGPercent"),
-    @NamedQuery(name = "VactUPPG.findByBLFAKDGOTGPercent", query = "SELECT v FROM VactUPPG v WHERE v.bLFAKDGOTGPercent = :bLFAKDGOTGPercent"),
-    @NamedQuery(name = "VactUPPG.findBySirieDensity20Start", query = "SELECT v FROM VactUPPG v WHERE v.sirieDensity20Start = :sirieDensity20Start"),
-    @NamedQuery(name = "VactUPPG.findBySirieDensity20End", query = "SELECT v FROM VactUPPG v WHERE v.sirieDensity20End = :sirieDensity20End"),
-    @NamedQuery(name = "VactUPPG.findByBlfDensity20Start", query = "SELECT v FROM VactUPPG v WHERE v.blfDensity20Start = :blfDensity20Start"),
-    @NamedQuery(name = "VactUPPG.findByBlfDensity20End", query = "SELECT v FROM VactUPPG v WHERE v.blfDensity20End = :blfDensity20End"),
-    @NamedQuery(name = "VactUPPG.findByAkdgDensity20Start", query = "SELECT v FROM VactUPPG v WHERE v.akdgDensity20Start = :akdgDensity20Start"),
-    @NamedQuery(name = "VactUPPG.findByAkdgDensity20End", query = "SELECT v FROM VactUPPG v WHERE v.akdgDensity20End = :akdgDensity20End"),
-    @NamedQuery(name = "VactUPPG.findByDrainStartLevel", query = "SELECT v FROM VactUPPG v WHERE v.drainStartLevel = :drainStartLevel"),
-    @NamedQuery(name = "VactUPPG.findByDrainFinishLevel", query = "SELECT v FROM VactUPPG v WHERE v.drainFinishLevel = :drainFinishLevel"),
-    @NamedQuery(name = "VactUPPG.findByDrainDensity", query = "SELECT v FROM VactUPPG v WHERE v.drainDensity = :drainDensity"),
-    @NamedQuery(name = "VactUPPG.findByDrainVolume", query = "SELECT v FROM VactUPPG v WHERE v.drainVolume = :drainVolume"),
-    @NamedQuery(name = "VactUPPG.findByDrainMass", query = "SELECT v FROM VactUPPG v WHERE v.drainMass = :drainMass"),
-    @NamedQuery(name = "VactUPPG.findByDrained", query = "SELECT v FROM VactUPPG v WHERE v.drained = :drained"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartLevel", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartLevel = :otguppgstartLevel"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgfinishLevel", query = "SELECT v FROM VactUPPG v WHERE v.otguppgfinishLevel = :otguppgfinishLevel"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartVolume", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartVolume = :otguppgstartVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendVolume", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendVolume = :otguppgendVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartMass", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartMass = :otguppgstartMass"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendMass", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendMass = :otguppgendMass"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartDensity", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartDensity = :otguppgstartDensity"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendDensity", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendDensity = :otguppgendDensity"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartDensity20", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartDensity20 = :otguppgstartDensity20"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendDensity20", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendDensity20 = :otguppgendDensity20"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgVolume", query = "SELECT v FROM VactUPPG v WHERE v.otguppgVolume = :otguppgVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgMass", query = "SELECT v FROM VactUPPG v WHERE v.otguppgMass = :otguppgMass"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgstartTemp", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartTemp = :otguppgstartTemp"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgendTemp", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendTemp = :otguppgendTemp"),
-    @NamedQuery(name = "VactUPPG.findByOtgtspVolume", query = "SELECT v FROM VactUPPG v WHERE v.otgtspVolume = :otgtspVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtgtspMass", query = "SELECT v FROM VactUPPG v WHERE v.otgtspMass = :otgtspMass"),
-    @NamedQuery(name = "VactUPPG.findByFeedstartData", query = "SELECT v FROM VactUPPG v WHERE v.feedstartData = :feedstartData"),
-    @NamedQuery(name = "VactUPPG.findByFeedfinishData", query = "SELECT v FROM VactUPPG v WHERE v.feedfinishData = :feedfinishData"),
-    @NamedQuery(name = "VactUPPG.findByFeedTotal", query = "SELECT v FROM VactUPPG v WHERE v.feedTotal = :feedTotal"),
-    @NamedQuery(name = "VactUPPG.findByComponent1", query = "SELECT v FROM VactUPPG v WHERE v.component1 = :component1"),
-    @NamedQuery(name = "VactUPPG.findByPercent1", query = "SELECT v FROM VactUPPG v WHERE v.percent1 = :percent1"),
-    @NamedQuery(name = "VactUPPG.findByComponent2", query = "SELECT v FROM VactUPPG v WHERE v.component2 = :component2"),
-    @NamedQuery(name = "VactUPPG.findByPercent2", query = "SELECT v FROM VactUPPG v WHERE v.percent2 = :percent2"),
-    @NamedQuery(name = "VactUPPG.findByComponent3", query = "SELECT v FROM VactUPPG v WHERE v.component3 = :component3"),
-    @NamedQuery(name = "VactUPPG.findByPercent3", query = "SELECT v FROM VactUPPG v WHERE v.percent3 = :percent3"),
-    @NamedQuery(name = "VactUPPG.findByComponent4", query = "SELECT v FROM VactUPPG v WHERE v.component4 = :component4"),
-    @NamedQuery(name = "VactUPPG.findByPercent4", query = "SELECT v FROM VactUPPG v WHERE v.percent4 = :percent4"),
-    @NamedQuery(name = "VactUPPG.findByComponent5", query = "SELECT v FROM VactUPPG v WHERE v.component5 = :component5"),
-    @NamedQuery(name = "VactUPPG.findByPercent5", query = "SELECT v FROM VactUPPG v WHERE v.percent5 = :percent5"),
-    @NamedQuery(name = "VactUPPG.findByDrainedBLF", query = "SELECT v FROM VactUPPG v WHERE v.drainedBLF = :drainedBLF"),
-    @NamedQuery(name = "VactUPPG.findByPercent6", query = "SELECT v FROM VactUPPG v WHERE v.percent6 = :percent6"),
-    @NamedQuery(name = "VactUPPG.findByComponent6", query = "SELECT v FROM VactUPPG v WHERE v.component6 = :component6"),
-    @NamedQuery(name = "VactUPPG.findByTankName", query = "SELECT v FROM VactUPPG v WHERE v.tankName = :tankName")})
+    @NamedQuery(name = "VactUPPG.findByAShift", query = "SELECT v FROM VactUPPG v WHERE v.aShift = :aShift")})
 public class VactUPPG implements Serializable {
 
     @Basic(optional = false)
@@ -283,47 +201,11 @@ public class VactUPPG implements Serializable {
     private BigDecimal drainMass;
     @Basic(optional = false)
     @Column(name = "drained")
-    private BigDecimal drained;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_startLevel")
-    private long otguppgstartLevel;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_finishLevel")
-    private long otguppgfinishLevel;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_startVolume")
-    private long otguppgstartVolume;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_endVolume")
-    private long otguppgendVolume;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_startMass")
-    private long otguppgstartMass;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_endMass")
-    private long otguppgendMass;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_startDensity")
-    private BigDecimal otguppgstartDensity;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_endDensity")
-    private BigDecimal otguppgendDensity;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_startDensity20")
-    private BigDecimal otguppgstartDensity20;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_endDensity20")
-    private BigDecimal otguppgendDensity20;
+    private BigDecimal drained;  
     @Column(name = "otg_uppg_Volume")
     private BigInteger otguppgVolume;
     @Column(name = "otg_uppg_Mass")
     private BigInteger otguppgMass;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_startTemp")
-    private BigDecimal otguppgstartTemp;
-    @Basic(optional = false)
-    @Column(name = "otg_uppg_endTemp")
-    private BigDecimal otguppgendTemp;
     @Column(name = "otg_tsp_Volume")
     private BigInteger otgtspVolume;
     @Column(name = "otg_tsp_Mass")
@@ -792,86 +674,6 @@ public class VactUPPG implements Serializable {
         this.drained = drained;
     }
 
-    public long getOtguppgstartLevel() {
-        return otguppgstartLevel;
-    }
-
-    public void setOtguppgstartLevel(long otguppgstartLevel) {
-        this.otguppgstartLevel = otguppgstartLevel;
-    }
-
-    public long getOtguppgfinishLevel() {
-        return otguppgfinishLevel;
-    }
-
-    public void setOtguppgfinishLevel(long otguppgfinishLevel) {
-        this.otguppgfinishLevel = otguppgfinishLevel;
-    }
-
-    public long getOtguppgstartVolume() {
-        return otguppgstartVolume;
-    }
-
-    public void setOtguppgstartVolume(long otguppgstartVolume) {
-        this.otguppgstartVolume = otguppgstartVolume;
-    }
-
-    public long getOtguppgendVolume() {
-        return otguppgendVolume;
-    }
-
-    public void setOtguppgendVolume(long otguppgendVolume) {
-        this.otguppgendVolume = otguppgendVolume;
-    }
-
-    public long getOtguppgstartMass() {
-        return otguppgstartMass;
-    }
-
-    public void setOtguppgstartMass(long otguppgstartMass) {
-        this.otguppgstartMass = otguppgstartMass;
-    }
-
-    public long getOtguppgendMass() {
-        return otguppgendMass;
-    }
-
-    public void setOtguppgendMass(long otguppgendMass) {
-        this.otguppgendMass = otguppgendMass;
-    }
-
-    public BigDecimal getOtguppgstartDensity() {
-        return otguppgstartDensity;
-    }
-
-    public void setOtguppgstartDensity(BigDecimal otguppgstartDensity) {
-        this.otguppgstartDensity = otguppgstartDensity;
-    }
-
-    public BigDecimal getOtguppgendDensity() {
-        return otguppgendDensity;
-    }
-
-    public void setOtguppgendDensity(BigDecimal otguppgendDensity) {
-        this.otguppgendDensity = otguppgendDensity;
-    }
-
-    public BigDecimal getOtguppgstartDensity20() {
-        return otguppgstartDensity20;
-    }
-
-    public void setOtguppgstartDensity20(BigDecimal otguppgstartDensity20) {
-        this.otguppgstartDensity20 = otguppgstartDensity20;
-    }
-
-    public BigDecimal getOtguppgendDensity20() {
-        return otguppgendDensity20;
-    }
-
-    public void setOtguppgendDensity20(BigDecimal otguppgendDensity20) {
-        this.otguppgendDensity20 = otguppgendDensity20;
-    }
-
     public BigInteger getOtguppgVolume() {
         return otguppgVolume;
     }
@@ -886,22 +688,6 @@ public class VactUPPG implements Serializable {
 
     public void setOtguppgMass(BigInteger otguppgMass) {
         this.otguppgMass = otguppgMass;
-    }
-
-    public BigDecimal getOtguppgstartTemp() {
-        return otguppgstartTemp;
-    }
-
-    public void setOtguppgstartTemp(BigDecimal otguppgstartTemp) {
-        this.otguppgstartTemp = otguppgstartTemp;
-    }
-
-    public BigDecimal getOtguppgendTemp() {
-        return otguppgendTemp;
-    }
-
-    public void setOtguppgendTemp(BigDecimal otguppgendTemp) {
-        this.otguppgendTemp = otguppgendTemp;
     }
 
     public BigInteger getOtgtspVolume() {

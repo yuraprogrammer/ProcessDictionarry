@@ -6,10 +6,11 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-13T10:21:00")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-18T14:49:26")
 @StaticMetamodel(OTGToUPPG.class)
 public class OTGToUPPG_ { 
 
+    public static volatile SingularAttribute<OTGToUPPG, Integer> tankOrder;
     public static volatile SingularAttribute<OTGToUPPG, BigDecimal> startTemp;
     public static volatile SingularAttribute<OTGToUPPG, Long> startMass;
     public static volatile SingularAttribute<OTGToUPPG, Long> startVolume;
