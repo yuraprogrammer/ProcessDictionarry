@@ -107,7 +107,6 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "VactUPPG.findByPercent4", query = "SELECT v FROM VactUPPG v WHERE v.percent4 = :percent4"),
     @NamedQuery(name = "VactUPPG.findByComponent5", query = "SELECT v FROM VactUPPG v WHERE v.component5 = :component5"),
     @NamedQuery(name = "VactUPPG.findByPercent5", query = "SELECT v FROM VactUPPG v WHERE v.percent5 = :percent5"),
-    @NamedQuery(name = "VactUPPG.findByWasteGases", query = "SELECT v FROM VactUPPG v WHERE v.wasteGases = :wasteGases"),
     @NamedQuery(name = "VactUPPG.findByDrainedBLF", query = "SELECT v FROM VactUPPG v WHERE v.drainedBLF = :drainedBLF"),
     @NamedQuery(name = "VactUPPG.findByPercent6", query = "SELECT v FROM VactUPPG v WHERE v.percent6 = :percent6"),
     @NamedQuery(name = "VactUPPG.findByComponent6", query = "SELECT v FROM VactUPPG v WHERE v.component6 = :component6"),
@@ -362,8 +361,6 @@ public class VactUPPG implements Serializable {
     @Basic(optional = false)
     @Column(name = "Percent_5")
     private double percent5;
-    @Column(name = "wasteGases")
-    private BigDecimal wasteGases;
     @Basic(optional = false)
     @Column(name = "drained_BLF")
     private BigDecimal drainedBLF;
@@ -1025,14 +1022,6 @@ public class VactUPPG implements Serializable {
 
     public void setPercent5(double percent5) {
         this.percent5 = percent5;
-    }
-
-    public BigDecimal getWasteGases() {
-        return wasteGases;
-    }
-
-    public void setWasteGases(BigDecimal wasteGases) {
-        this.wasteGases = wasteGases;
     }
 
     public BigDecimal getDrainedBLF() {
