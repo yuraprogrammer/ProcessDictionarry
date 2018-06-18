@@ -6,6 +6,7 @@
 package com.alexprom.entities.process;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,26 +35,32 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ActUPPG.findByDateShift", query = "SELECT a FROM ActUPPG a WHERE a.aDate = :aDate AND a.aShift = :aShift")})
 public class ActUPPG implements Serializable {
 
-    private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @Column(nullable = false)
+    @Column(name = "ID")
     private Long id;
-    @Column(length = 10)
+    @Column(name = "aDate")
     private String aDate;
+    @Column(name = "aShift")
     private Integer aShift;
     @Basic(optional = false)
-    @Column(nullable = false)
+    @Column(name = "mainOper")
     private int mainOper;
     @Basic(optional = false)
-    @Column(nullable = false)
+    @Column(name = "slaveOper")
     private int slaveOper;
     @Basic(optional = false)
-    @Column(nullable = false)
+    @Column(name = "Complete")
     private int complete;
     @Basic(optional = false)
-    @Column(nullable = false)
+    @Column(name = "aCode")
     private int aCode;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Basic(optional = false)
+    @Column(name = "maxValue")
+    private BigDecimal maxValue;
+
+    private static final long serialVersionUID = 1L;    
 
     public ActUPPG() {
     }
@@ -149,6 +156,24 @@ public class ActUPPG implements Serializable {
     @Override
     public String toString() {
         return "com.alexprom.entities.process.ActUPPG[ id=" + id + " ]";
+    }
+
+    
+    public ActUPPG(Long id, int mainOper, int slaveOper, int complete, int aCode, BigDecimal maxValue) {
+        this.id = id;
+        this.mainOper = mainOper;
+        this.slaveOper = slaveOper;
+        this.complete = complete;
+        this.aCode = aCode;
+        this.maxValue = maxValue;
+    }
+
+    public BigDecimal getMaxValue() {
+        return maxValue;
+    }
+
+    public void setMaxValue(BigDecimal maxValue) {
+        this.maxValue = maxValue;
     }
     
 }

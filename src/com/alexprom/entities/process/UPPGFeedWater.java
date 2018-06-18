@@ -44,7 +44,7 @@ public class UPPGFeedWater implements Serializable {
     @Basic(optional = false)
     @Column(name = "finishData")
     private int finishData;
-    @Column(name = "shiftTotal")
+    @Column(name = "shiftTotal", insertable = false, updatable = false)
     private Integer shiftTotal;
    
     public UPPGFeedWater() {

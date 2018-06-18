@@ -54,6 +54,26 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ActCounters.findByAKDFVolume", query = "SELECT a FROM ActCounters a WHERE a.aKDFVolume = :aKDFVolume")})
 public class ActCounters implements Serializable {
 
+    @Id
+    @Basic(optional = false)
+    @Column(name = "id")
+    private Long id;
+    @Basic(optional = false)
+    @Column(name = "actID")
+    private long actID;
+    @Basic(optional = false)
+    @Column(name = "Processing_Dinsity")
+    private BigDecimal processingDinsity;
+    @Basic(optional = false)
+    @Column(name = "BLF_Density")
+    private BigDecimal bLFDensity;
+    @Basic(optional = false)
+    @Column(name = "AKDG_Density")
+    private BigDecimal aKDGDensity;
+    @Basic(optional = false)
+    @Column(name = "OTG_Density")
+    private BigDecimal oTGDensity;
+
     
     @Column(name = "BLF_AKDG_Percent", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal bLFAKDGPercent;
@@ -68,13 +88,7 @@ public class ActCounters implements Serializable {
     private BigDecimal oTGPercent;
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private Long id;
-    @Basic(optional = false)
-    @Column(nullable = false)
-    private long actID;
+    
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
     @Column(name = "MassStart_S", nullable = false, precision = 18, scale = 4)
@@ -148,17 +162,17 @@ public class ActCounters implements Serializable {
     @Basic(optional = false)
     @Column(name = "DensityEnd_A", nullable = false, precision = 18, scale = 4)
     private BigDecimal densityEndA;
-    @Column(name = "Processing_Mass", precision = 19, scale = 4)
+    @Column(name = "Processing_Mass", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal processingMass;
-    @Column(name = "Processing_Volume", precision = 19, scale = 4)
+    @Column(name = "Processing_Volume", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal processingVolume;
-    @Column(name = "BLF_Mass", precision = 19, scale = 4)
+    @Column(name = "BLF_Mass", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal bLFMass;
-    @Column(name = "BLF_Volume", precision = 19, scale = 4)
+    @Column(name = "BLF_Volume", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal bLFVolume;
-    @Column(name = "AKDG_Mass", precision = 19, scale = 4)
+    @Column(name = "AKDG_Mass", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal aKDGMass;
-    @Column(name = "AKDF_Volume", precision = 19, scale = 4)
+    @Column(name = "AKDF_Volume", precision = 19, scale = 4, insertable = false, updatable = false)
     private BigDecimal aKDFVolume;
 
     public ActCounters() {
@@ -523,5 +537,48 @@ public class ActCounters implements Serializable {
         this.bLFAKDGOTGPercent = bLFAKDGOTGPercent;
     }
 
+    
+    public ActCounters(Long id, long actID, BigDecimal processingDinsity, BigDecimal bLFDensity, BigDecimal aKDGDensity, BigDecimal oTGDensity) {
+        this.id = id;
+        this.actID = actID;
+        this.processingDinsity = processingDinsity;
+        this.bLFDensity = bLFDensity;
+        this.aKDGDensity = aKDGDensity;
+        this.oTGDensity = oTGDensity;
+    }
+
+    public BigDecimal getProcessingDinsity() {
+        return processingDinsity;
+    }
+
+    public void setProcessingDinsity(BigDecimal processingDinsity) {
+        this.processingDinsity = processingDinsity;
+    }
+
+    public BigDecimal getBLFDensity() {
+        return bLFDensity;
+    }
+
+    public void setBLFDensity(BigDecimal bLFDensity) {
+        this.bLFDensity = bLFDensity;
+    }
+
+    public BigDecimal getAKDGDensity() {
+        return aKDGDensity;
+    }
+
+    public void setAKDGDensity(BigDecimal aKDGDensity) {
+        this.aKDGDensity = aKDGDensity;
+    }
+
+    public BigDecimal getOTGDensity() {
+        return oTGDensity;
+    }
+
+    public void setOTGDensity(BigDecimal oTGDensity) {
+        this.oTGDensity = oTGDensity;
+    }
+
+   
         
 }

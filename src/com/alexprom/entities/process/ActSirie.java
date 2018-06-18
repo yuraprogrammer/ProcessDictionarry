@@ -41,59 +41,53 @@ import javax.xml.bind.annotation.XmlRootElement;
 })
 public class ActSirie implements Serializable {
 
-    
-    private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @Column(nullable = false)
+    @Column(name = "ID")
     private Long id;
     @Basic(optional = false)
-    @Column(nullable = false)
+    @Column(name = "actID")
     private long actID;
     @Basic(optional = false)
-    @Column(name = "Component_1", nullable = false)
-    private int component1;
+    @Column(name = "Component_1")
+    private String component1;
+    @Basic(optional = false)
+    @Column(name = "Component_2")
+    private String component2;
+    @Basic(optional = false)
+    @Column(name = "Component_3")
+    private String component3;
+    @Basic(optional = false)
+    @Column(name = "Component_4")
+    private String component4;
+    @Basic(optional = false)
+    @Column(name = "Component_5")
+    private String component5;
+    @Basic(optional = false)
+    @Column(name = "Component_6")
+    private String component6;
+
+    
+    private static final long serialVersionUID = 1L;
+    
     @Basic(optional = false)
     @Column(name = "Percent_1", nullable = false)
     private double percent1;
     @Basic(optional = false)
-    @Column(name = "Component_2", nullable = false)
-    private int component2;
-    @Basic(optional = false)
     @Column(name = "Percent_2", nullable = false)
     private double percent2;
-    @Basic(optional = false)
-    @Column(name = "Component_3", nullable = false)
-    private int component3;
     @Basic(optional = false)
     @Column(name = "Percent_3", nullable = false)
     private double percent3;
     @Basic(optional = false)
-    @Column(name = "Component_4", nullable = false)
-    private int component4;
-    @Basic(optional = false)
     @Column(name = "Percent_4", nullable = false)
     private double percent4;
-    @Basic(optional = false)
-    @Column(name = "Component_5", nullable = false)
-    private int component5;
     @Basic(optional = false)
     @Column(name = "Percent_5", nullable = false)
     private double percent5;
     @Basic(optional = false)
-    @Column(name = "Component_6", nullable = false)
-    private int component6;
-    @Basic(optional = false)
     @Column(name = "Percent_6", nullable = false)
     private double percent6;
-
-    public int getComponent6() {
-        return component6;
-    }
-
-    public void setComponent6(int component6) {
-        this.component6 = component6;
-    }
 
     public double getPercent6() {
         return percent6;
@@ -108,23 +102,6 @@ public class ActSirie implements Serializable {
 
     public ActSirie(Long id) {
         this.id = id;
-    }
-
-    public ActSirie(Long id, long actID, int component1, double percent1, int component2, double percent2, int component3, double percent3, int component4, double percent4, int component5, double percent5, int component6, double percent6) {
-        this.id = id;
-        this.actID = actID;
-        this.component1 = component1;
-        this.percent1 = percent1;
-        this.component2 = component2;
-        this.percent2 = percent2;
-        this.component3 = component3;
-        this.percent3 = percent3;
-        this.component4 = component4;
-        this.percent4 = percent4;
-        this.component5 = component5;
-        this.percent5 = percent5;
-        this.component6 = component6;
-        this.percent6 = percent6;
     }
 
     public Long getId() {
@@ -143,28 +120,12 @@ public class ActSirie implements Serializable {
         this.actID = actID;
     }
 
-    public int getComponent1() {
-        return component1;
-    }
-
-    public void setComponent1(int component1) {
-        this.component1 = component1;
-    }
-
     public double getPercent1() {
         return percent1;
     }
 
     public void setPercent1(double percent1) {
         this.percent1 = percent1;
-    }
-
-    public int getComponent2() {
-        return component2;
-    }
-
-    public void setComponent2(int component2) {
-        this.component2 = component2;
     }
 
     public double getPercent2() {
@@ -175,14 +136,6 @@ public class ActSirie implements Serializable {
         this.percent2 = percent2;
     }
 
-    public int getComponent3() {
-        return component3;
-    }
-
-    public void setComponent3(int component3) {
-        this.component3 = component3;
-    }
-
     public double getPercent3() {
         return percent3;
     }
@@ -191,28 +144,12 @@ public class ActSirie implements Serializable {
         this.percent3 = percent3;
     }
 
-    public int getComponent4() {
-        return component4;
-    }
-
-    public void setComponent4(int component4) {
-        this.component4 = component4;
-    }
-
     public double getPercent4() {
         return percent4;
     }
 
     public void setPercent4(double percent4) {
         this.percent4 = percent4;
-    }
-
-    public int getComponent5() {
-        return component5;
-    }
-
-    public void setComponent5(int component5) {
-        this.component5 = component5;
     }
 
     public double getPercent5() {
@@ -254,5 +191,67 @@ public class ActSirie implements Serializable {
         this.actID = actID;
     }
 
+    
+
+    public ActSirie(Long id, long actID, String component1, String component2, String component3, String component4, String component5, String component6) {
+        this.id = id;
+        this.actID = actID;
+        this.component1 = component1;
+        this.component2 = component2;
+        this.component3 = component3;
+        this.component4 = component4;
+        this.component5 = component5;
+        this.component6 = component6;
+    }
+
+    public String getComponent1() {
+        return component1;
+    }
+
+    public void setComponent1(String component1) {
+        this.component1 = component1;
+    }
+
+    public String getComponent2() {
+        return component2;
+    }
+
+    public void setComponent2(String component2) {
+        this.component2 = component2;
+    }
+
+    public String getComponent3() {
+        return component3;
+    }
+
+    public void setComponent3(String component3) {
+        this.component3 = component3;
+    }
+
+    public String getComponent4() {
+        return component4;
+    }
+
+    public void setComponent4(String component4) {
+        this.component4 = component4;
+    }
+
+    public String getComponent5() {
+        return component5;
+    }
+
+    public void setComponent5(String component5) {
+        this.component5 = component5;
+    }
+
+    public String getComponent6() {
+        return component6;
+    }
+
+    public void setComponent6(String component6) {
+        this.component6 = component6;
+    }
+
+    
     
 }
