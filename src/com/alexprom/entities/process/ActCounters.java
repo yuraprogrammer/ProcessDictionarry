@@ -54,6 +54,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ActCounters.findByAKDFVolume", query = "SELECT a FROM ActCounters a WHERE a.aKDFVolume = :aKDFVolume")})
 public class ActCounters implements Serializable {
 
+    @Basic(optional = false)
+    @Column(name = "E9_Gravity")
+    private BigDecimal e9Gravity;
+
     @Id
     @Basic(optional = false)
     @Column(name = "id")
@@ -577,6 +581,14 @@ public class ActCounters implements Serializable {
 
     public void setOTGDensity(BigDecimal oTGDensity) {
         this.oTGDensity = oTGDensity;
+    }
+
+    public BigDecimal getE9Gravity() {
+        return e9Gravity;
+    }
+
+    public void setE9Gravity(BigDecimal e9Gravity) {
+        this.e9Gravity = e9Gravity;
     }
 
    

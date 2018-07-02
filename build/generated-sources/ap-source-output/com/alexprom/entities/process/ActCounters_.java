@@ -5,7 +5,7 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-06-15T09:19:47")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-07-02T10:51:30")
 @StaticMetamodel(ActCounters.class)
 public class ActCounters_ { 
 
@@ -36,6 +36,7 @@ public class ActCounters_ {
     public static volatile SingularAttribute<ActCounters, BigDecimal> tempEndS;
     public static volatile SingularAttribute<ActCounters, Long> actID;
     public static volatile SingularAttribute<ActCounters, BigDecimal> densityEndS;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> e9Gravity;
     public static volatile SingularAttribute<ActCounters, BigDecimal> bLFDensity;
     public static volatile SingularAttribute<ActCounters, BigDecimal> bLFAKDGPercent;
     public static volatile SingularAttribute<ActCounters, BigDecimal> volumeStartB;
