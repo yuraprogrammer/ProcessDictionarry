@@ -43,6 +43,26 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "OTGToUPPG.findByOtgToUppgMass", query = "SELECT o FROM OTGToUPPG o WHERE o.otgToUppgMass = :otgToUppgMass")})
 public class OTGToUPPG implements Serializable {
 
+    @Column(name = "otgToUppgMass", insertable = false, updatable = false)
+    private BigDecimal otgToUppgMass;
+    @Basic(optional = false)
+    @Column(name = "tankOrder")
+    private int tankOrder;
+    @Basic(optional = false)
+    @Column(name = "loadVolume")
+    private long loadVolume;
+    @Basic(optional = false)
+    @Column(name = "loadDensity")
+    private BigDecimal loadDensity;
+    @Column(name = "loadMass", insertable = false, updatable = false)
+    private BigDecimal loadMass;
+    @Basic(optional = false)
+    @Column(name = "loadTemp")
+    private BigDecimal loadTemp;
+    @Basic(optional = false)
+    @Column(name = "loadDensity20")
+    private BigDecimal loadDensity20;
+
     @Id
     @Basic(optional = false)
     @Column(name = "ID")
@@ -86,8 +106,6 @@ public class OTGToUPPG implements Serializable {
     private BigDecimal endDensity20;
     @Column(name = "otgToUppgVolume", insertable = false, updatable = false)
     private BigInteger otgToUppgVolume;
-    @Column(name = "otgToUppgMass", insertable = false, updatable = false)
-    private BigInteger otgToUppgMass;
     @Basic(optional = false)
     @Column(name = "startTemp")
     private BigDecimal startTemp;
@@ -230,13 +248,6 @@ public class OTGToUPPG implements Serializable {
         this.otgToUppgVolume = otgToUppgVolume;
     }
 
-    public BigInteger getOtgToUppgMass() {
-        return otgToUppgMass;
-    }
-
-    public void setOtgToUppgMass(BigInteger otgToUppgMass) {
-        this.otgToUppgMass = otgToUppgMass;
-    }
 
     @Override
     public int hashCode() {
@@ -297,5 +308,61 @@ public class OTGToUPPG implements Serializable {
     public void setEndTemp(BigDecimal endTemp) {
         this.endTemp = endTemp;
     }    
+
+    public BigDecimal getOtgToUppgMass() {
+        return otgToUppgMass;
+    }
+
+    public void setOtgToUppgMass(BigDecimal otgToUppgMass) {
+        this.otgToUppgMass = otgToUppgMass;
+    }
+
+    public int getTankOrder() {
+        return tankOrder;
+    }
+
+    public void setTankOrder(int tankOrder) {
+        this.tankOrder = tankOrder;
+    }
+
+    public long getLoadVolume() {
+        return loadVolume;
+    }
+
+    public void setLoadVolume(long loadVolume) {
+        this.loadVolume = loadVolume;
+    }
+
+    public BigDecimal getLoadDensity() {
+        return loadDensity;
+    }
+
+    public void setLoadDensity(BigDecimal loadDensity) {
+        this.loadDensity = loadDensity;
+    }
+
+    public BigDecimal getLoadMass() {
+        return loadMass;
+    }
+
+    public void setLoadMass(BigDecimal loadMass) {
+        this.loadMass = loadMass;
+    }
+
+    public BigDecimal getLoadTemp() {
+        return loadTemp;
+    }
+
+    public void setLoadTemp(BigDecimal loadTemp) {
+        this.loadTemp = loadTemp;
+    }
+
+    public BigDecimal getLoadDensity20() {
+        return loadDensity20;
+    }
+
+    public void setLoadDensity20(BigDecimal loadDensity20) {
+        this.loadDensity20 = loadDensity20;
+    }
     
 }
