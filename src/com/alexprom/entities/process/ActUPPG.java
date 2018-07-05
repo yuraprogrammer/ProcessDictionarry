@@ -35,6 +35,10 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ActUPPG.findByDateShift", query = "SELECT a FROM ActUPPG a WHERE a.aDate = :aDate AND a.aShift = :aShift")})
 public class ActUPPG implements Serializable {
 
+    @Basic(optional = false)
+    @Column(name = "maxTempFurnace")
+    private BigDecimal maxTempFurnace;
+
     @Id
     @Basic(optional = false)
     @Column(name = "ID")
@@ -174,6 +178,14 @@ public class ActUPPG implements Serializable {
 
     public void setMaxValue(BigDecimal maxValue) {
         this.maxValue = maxValue;
+    }
+
+    public BigDecimal getMaxTempFurnace() {
+        return maxTempFurnace;
+    }
+
+    public void setMaxTempFurnace(BigDecimal maxTempFurnace) {
+        this.maxTempFurnace = maxTempFurnace;
     }
     
 }

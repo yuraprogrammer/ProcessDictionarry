@@ -5,7 +5,7 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-07-02T10:51:30")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2018-07-05T09:19:50")
 @StaticMetamodel(ActUPPG.class)
 public class ActUPPG_ { 
 
@@ -13,6 +13,7 @@ public class ActUPPG_ {
     public static volatile SingularAttribute<ActUPPG, String> aDate;
     public static volatile SingularAttribute<ActUPPG, Integer> aShift;
     public static volatile SingularAttribute<ActUPPG, Integer> aCode;
+    public static volatile SingularAttribute<ActUPPG, BigDecimal> maxTempFurnace;
     public static volatile SingularAttribute<ActUPPG, Integer> mainOper;
     public static volatile SingularAttribute<ActUPPG, Long> id;
     public static volatile SingularAttribute<ActUPPG, Integer> slaveOper;
