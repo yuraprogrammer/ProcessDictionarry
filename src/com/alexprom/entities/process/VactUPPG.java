@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author Lenovo
+ * @author yura_
  */
 @Entity
 @Table(name = "v_actUPPG")
@@ -78,6 +78,35 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "VactUPPG.findByDrainVolume", query = "SELECT v FROM VactUPPG v WHERE v.drainVolume = :drainVolume"),
     @NamedQuery(name = "VactUPPG.findByDrainMass", query = "SELECT v FROM VactUPPG v WHERE v.drainMass = :drainMass"),
     @NamedQuery(name = "VactUPPG.findByDrained", query = "SELECT v FROM VactUPPG v WHERE v.drained = :drained"),
+    @NamedQuery(name = "VactUPPG.findByOtguppgVolume", query = "SELECT v FROM VactUPPG v WHERE v.otguppgVolume = :otguppgVolume"),
+    @NamedQuery(name = "VactUPPG.findByOtguppgMass", query = "SELECT v FROM VactUPPG v WHERE v.otguppgMass = :otguppgMass"),
+    @NamedQuery(name = "VactUPPG.findByOtgtspVolume", query = "SELECT v FROM VactUPPG v WHERE v.otgtspVolume = :otgtspVolume"),
+    @NamedQuery(name = "VactUPPG.findByOtgtspMass", query = "SELECT v FROM VactUPPG v WHERE v.otgtspMass = :otgtspMass"),
+    @NamedQuery(name = "VactUPPG.findByFeedstartData", query = "SELECT v FROM VactUPPG v WHERE v.feedstartData = :feedstartData"),
+    @NamedQuery(name = "VactUPPG.findByFeedfinishData", query = "SELECT v FROM VactUPPG v WHERE v.feedfinishData = :feedfinishData"),
+    @NamedQuery(name = "VactUPPG.findByFeedTotal", query = "SELECT v FROM VactUPPG v WHERE v.feedTotal = :feedTotal"),
+    @NamedQuery(name = "VactUPPG.findByPercent1", query = "SELECT v FROM VactUPPG v WHERE v.percent1 = :percent1"),
+    @NamedQuery(name = "VactUPPG.findByPercent2", query = "SELECT v FROM VactUPPG v WHERE v.percent2 = :percent2"),
+    @NamedQuery(name = "VactUPPG.findByPercent3", query = "SELECT v FROM VactUPPG v WHERE v.percent3 = :percent3"),
+    @NamedQuery(name = "VactUPPG.findByPercent4", query = "SELECT v FROM VactUPPG v WHERE v.percent4 = :percent4"),
+    @NamedQuery(name = "VactUPPG.findByPercent5", query = "SELECT v FROM VactUPPG v WHERE v.percent5 = :percent5"),
+    @NamedQuery(name = "VactUPPG.findByDrainedBLF", query = "SELECT v FROM VactUPPG v WHERE v.drainedBLF = :drainedBLF"),
+    @NamedQuery(name = "VactUPPG.findByPercent6", query = "SELECT v FROM VactUPPG v WHERE v.percent6 = :percent6"),
+    @NamedQuery(name = "VactUPPG.findByTankName", query = "SELECT v FROM VactUPPG v WHERE v.tankName = :tankName"),
+    @NamedQuery(name = "VactUPPG.findBySirieVolume", query = "SELECT v FROM VactUPPG v WHERE v.sirieVolume = :sirieVolume"),
+    @NamedQuery(name = "VactUPPG.findBySirieDensity", query = "SELECT v FROM VactUPPG v WHERE v.sirieDensity = :sirieDensity"),
+    @NamedQuery(name = "VactUPPG.findBySirieMass", query = "SELECT v FROM VactUPPG v WHERE v.sirieMass = :sirieMass"),
+    @NamedQuery(name = "VactUPPG.findByMaxValue", query = "SELECT v FROM VactUPPG v WHERE v.maxValue = :maxValue"),
+    @NamedQuery(name = "VactUPPG.findByComponent1", query = "SELECT v FROM VactUPPG v WHERE v.component1 = :component1"),
+    @NamedQuery(name = "VactUPPG.findByComponent2", query = "SELECT v FROM VactUPPG v WHERE v.component2 = :component2"),
+    @NamedQuery(name = "VactUPPG.findByComponent3", query = "SELECT v FROM VactUPPG v WHERE v.component3 = :component3"),
+    @NamedQuery(name = "VactUPPG.findByComponent4", query = "SELECT v FROM VactUPPG v WHERE v.component4 = :component4"),
+    @NamedQuery(name = "VactUPPG.findByComponent5", query = "SELECT v FROM VactUPPG v WHERE v.component5 = :component5"),
+    @NamedQuery(name = "VactUPPG.findByComponent6", query = "SELECT v FROM VactUPPG v WHERE v.component6 = :component6"),
+    @NamedQuery(name = "VactUPPG.findByProcessingDinsity", query = "SELECT v FROM VactUPPG v WHERE v.processingDinsity = :processingDinsity"),
+    @NamedQuery(name = "VactUPPG.findByBLFDensity", query = "SELECT v FROM VactUPPG v WHERE v.bLFDensity = :bLFDensity"),
+    @NamedQuery(name = "VactUPPG.findByAKDGDensity", query = "SELECT v FROM VactUPPG v WHERE v.aKDGDensity = :aKDGDensity"),
+    @NamedQuery(name = "VactUPPG.findByOTGDensity", query = "SELECT v FROM VactUPPG v WHERE v.oTGDensity = :oTGDensity"),
     @NamedQuery(name = "VactUPPG.findByOtguppgstartLevel", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartLevel = :otguppgstartLevel"),
     @NamedQuery(name = "VactUPPG.findByOtguppgfinishLevel", query = "SELECT v FROM VactUPPG v WHERE v.otguppgfinishLevel = :otguppgfinishLevel"),
     @NamedQuery(name = "VactUPPG.findByOtguppgstartVolume", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartVolume = :otguppgstartVolume"),
@@ -88,56 +117,30 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "VactUPPG.findByOtguppgendDensity", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendDensity = :otguppgendDensity"),
     @NamedQuery(name = "VactUPPG.findByOtguppgstartDensity20", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartDensity20 = :otguppgstartDensity20"),
     @NamedQuery(name = "VactUPPG.findByOtguppgendDensity20", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendDensity20 = :otguppgendDensity20"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgVolume", query = "SELECT v FROM VactUPPG v WHERE v.otguppgVolume = :otguppgVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtguppgMass", query = "SELECT v FROM VactUPPG v WHERE v.otguppgMass = :otguppgMass"),
     @NamedQuery(name = "VactUPPG.findByOtguppgstartTemp", query = "SELECT v FROM VactUPPG v WHERE v.otguppgstartTemp = :otguppgstartTemp"),
     @NamedQuery(name = "VactUPPG.findByOtguppgendTemp", query = "SELECT v FROM VactUPPG v WHERE v.otguppgendTemp = :otguppgendTemp"),
-    @NamedQuery(name = "VactUPPG.findByOtgtspVolume", query = "SELECT v FROM VactUPPG v WHERE v.otgtspVolume = :otgtspVolume"),
-    @NamedQuery(name = "VactUPPG.findByOtgtspMass", query = "SELECT v FROM VactUPPG v WHERE v.otgtspMass = :otgtspMass"),
-    @NamedQuery(name = "VactUPPG.findByFeedstartData", query = "SELECT v FROM VactUPPG v WHERE v.feedstartData = :feedstartData"),
-    @NamedQuery(name = "VactUPPG.findByFeedfinishData", query = "SELECT v FROM VactUPPG v WHERE v.feedfinishData = :feedfinishData"),
-    @NamedQuery(name = "VactUPPG.findByFeedTotal", query = "SELECT v FROM VactUPPG v WHERE v.feedTotal = :feedTotal"),
-    @NamedQuery(name = "VactUPPG.findByComponent1", query = "SELECT v FROM VactUPPG v WHERE v.component1 = :component1"),
-    @NamedQuery(name = "VactUPPG.findByPercent1", query = "SELECT v FROM VactUPPG v WHERE v.percent1 = :percent1"),
-    @NamedQuery(name = "VactUPPG.findByComponent2", query = "SELECT v FROM VactUPPG v WHERE v.component2 = :component2"),
-    @NamedQuery(name = "VactUPPG.findByPercent2", query = "SELECT v FROM VactUPPG v WHERE v.percent2 = :percent2"),
-    @NamedQuery(name = "VactUPPG.findByComponent3", query = "SELECT v FROM VactUPPG v WHERE v.component3 = :component3"),
-    @NamedQuery(name = "VactUPPG.findByPercent3", query = "SELECT v FROM VactUPPG v WHERE v.percent3 = :percent3"),
-    @NamedQuery(name = "VactUPPG.findByComponent4", query = "SELECT v FROM VactUPPG v WHERE v.component4 = :component4"),
-    @NamedQuery(name = "VactUPPG.findByPercent4", query = "SELECT v FROM VactUPPG v WHERE v.percent4 = :percent4"),
-    @NamedQuery(name = "VactUPPG.findByComponent5", query = "SELECT v FROM VactUPPG v WHERE v.component5 = :component5"),
-    @NamedQuery(name = "VactUPPG.findByPercent5", query = "SELECT v FROM VactUPPG v WHERE v.percent5 = :percent5"),
-    @NamedQuery(name = "VactUPPG.findByDrainedBLF", query = "SELECT v FROM VactUPPG v WHERE v.drainedBLF = :drainedBLF"),
-    @NamedQuery(name = "VactUPPG.findByPercent6", query = "SELECT v FROM VactUPPG v WHERE v.percent6 = :percent6"),
-    @NamedQuery(name = "VactUPPG.findByComponent6", query = "SELECT v FROM VactUPPG v WHERE v.component6 = :component6"),
-    @NamedQuery(name = "VactUPPG.findByTankName", query = "SELECT v FROM VactUPPG v WHERE v.tankName = :tankName")})
+    @NamedQuery(name = "VactUPPG.findByE9Gravity", query = "SELECT v FROM VactUPPG v WHERE v.e9Gravity = :e9Gravity"),
+    @NamedQuery(name = "VactUPPG.findByLoadVolume", query = "SELECT v FROM VactUPPG v WHERE v.loadVolume = :loadVolume"),
+    @NamedQuery(name = "VactUPPG.findByLoadDensity", query = "SELECT v FROM VactUPPG v WHERE v.loadDensity = :loadDensity"),
+    @NamedQuery(name = "VactUPPG.findByLoadMass", query = "SELECT v FROM VactUPPG v WHERE v.loadMass = :loadMass"),
+    @NamedQuery(name = "VactUPPG.findByLoadTemp", query = "SELECT v FROM VactUPPG v WHERE v.loadTemp = :loadTemp"),
+    @NamedQuery(name = "VactUPPG.findByLoadDensity20", query = "SELECT v FROM VactUPPG v WHERE v.loadDensity20 = :loadDensity20"),
+    @NamedQuery(name = "VactUPPG.findByMaxTempFurnace", query = "SELECT v FROM VactUPPG v WHERE v.maxTempFurnace = :maxTempFurnace"),
+    @NamedQuery(name = "VactUPPG.findByMassStartR", query = "SELECT v FROM VactUPPG v WHERE v.massStartR = :massStartR"),
+    @NamedQuery(name = "VactUPPG.findByVolumeStartR", query = "SELECT v FROM VactUPPG v WHERE v.volumeStartR = :volumeStartR"),
+    @NamedQuery(name = "VactUPPG.findByDensityStartR", query = "SELECT v FROM VactUPPG v WHERE v.densityStartR = :densityStartR"),
+    @NamedQuery(name = "VactUPPG.findByMassEndR", query = "SELECT v FROM VactUPPG v WHERE v.massEndR = :massEndR"),
+    @NamedQuery(name = "VactUPPG.findByVolumeEndR", query = "SELECT v FROM VactUPPG v WHERE v.volumeEndR = :volumeEndR"),
+    @NamedQuery(name = "VactUPPG.findByRVOPercent", query = "SELECT v FROM VactUPPG v WHERE v.rVOPercent = :rVOPercent"),
+    @NamedQuery(name = "VactUPPG.findByRVOMass", query = "SELECT v FROM VactUPPG v WHERE v.rVOMass = :rVOMass"),
+    @NamedQuery(name = "VactUPPG.findByRVOVolume", query = "SELECT v FROM VactUPPG v WHERE v.rVOVolume = :rVOVolume"),
+    @NamedQuery(name = "VactUPPG.findByRVODensity", query = "SELECT v FROM VactUPPG v WHERE v.rVODensity = :rVODensity"),
+    @NamedQuery(name = "VactUPPG.findByTempStartR", query = "SELECT v FROM VactUPPG v WHERE v.tempStartR = :tempStartR"),
+    @NamedQuery(name = "VactUPPG.findByTempEndR", query = "SELECT v FROM VactUPPG v WHERE v.tempEndR = :tempEndR"),
+    @NamedQuery(name = "VactUPPG.findByDensityEndR", query = "SELECT v FROM VactUPPG v WHERE v.densityEndR = :densityEndR"),
+    @NamedQuery(name = "VactUPPG.findByRvoDensity20Start", query = "SELECT v FROM VactUPPG v WHERE v.rvoDensity20Start = :rvoDensity20Start"),
+    @NamedQuery(name = "VactUPPG.findByRvoDensity20End", query = "SELECT v FROM VactUPPG v WHERE v.rvoDensity20End = :rvoDensity20End")})
 public class VactUPPG implements Serializable {
-
-    @Basic(optional = false)
-    @Column(name = "Processing_Dinsity")
-    private BigDecimal processingDinsity;
-    @Basic(optional = false)
-    @Column(name = "BLF_Density")
-    private BigDecimal bLFDensity;
-    @Basic(optional = false)
-    @Column(name = "AKDG_Density")
-    private BigDecimal aKDGDensity;
-    @Basic(optional = false)
-    @Column(name = "OTG_Density")
-    private BigDecimal oTGDensity;
-
-    @Basic(optional = false)
-    @Column(name = "maxValue")
-    private BigDecimal maxValue;
-
-    @Basic(optional = false)
-    @Column(name = "sirieVolume")
-    private BigDecimal sirieVolume;
-    @Basic(optional = false)
-    @Column(name = "sirieDensity")
-    private BigDecimal sirieDensity;
-    @Column(name = "sirieMass")
-    private BigDecimal sirieMass;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -284,6 +287,87 @@ public class VactUPPG implements Serializable {
     @Basic(optional = false)
     @Column(name = "drained")
     private BigDecimal drained;
+    @Column(name = "otg_uppg_Volume")
+    private BigInteger otguppgVolume;
+    @Column(name = "otg_uppg_Mass")
+    private BigDecimal otguppgMass;
+    @Column(name = "otg_tsp_Volume")
+    private BigInteger otgtspVolume;
+    @Column(name = "otg_tsp_Mass")
+    private BigDecimal otgtspMass;
+    @Basic(optional = false)
+    @Column(name = "feed_startData")
+    private int feedstartData;
+    @Basic(optional = false)
+    @Column(name = "feed_finishData")
+    private int feedfinishData;
+    @Column(name = "feed_total")
+    private Integer feedTotal;
+    @Basic(optional = false)
+    @Column(name = "Percent_1")
+    private double percent1;
+    @Basic(optional = false)
+    @Column(name = "Percent_2")
+    private double percent2;
+    @Basic(optional = false)
+    @Column(name = "Percent_3")
+    private double percent3;
+    @Basic(optional = false)
+    @Column(name = "Percent_4")
+    private double percent4;
+    @Basic(optional = false)
+    @Column(name = "Percent_5")
+    private double percent5;
+    @Basic(optional = false)
+    @Column(name = "drained_BLF")
+    private BigDecimal drainedBLF;
+    @Basic(optional = false)
+    @Column(name = "Percent_6")
+    private double percent6;
+    @Basic(optional = false)
+    @Column(name = "Tank_Name")
+    private String tankName;
+    @Basic(optional = false)
+    @Column(name = "sirieVolume")
+    private BigDecimal sirieVolume;
+    @Basic(optional = false)
+    @Column(name = "sirieDensity")
+    private BigDecimal sirieDensity;
+    @Column(name = "sirieMass")
+    private BigDecimal sirieMass;
+    @Basic(optional = false)
+    @Column(name = "maxValue")
+    private BigDecimal maxValue;
+    @Basic(optional = false)
+    @Column(name = "Component_1")
+    private String component1;
+    @Basic(optional = false)
+    @Column(name = "Component_2")
+    private String component2;
+    @Basic(optional = false)
+    @Column(name = "Component_3")
+    private String component3;
+    @Basic(optional = false)
+    @Column(name = "Component_4")
+    private String component4;
+    @Basic(optional = false)
+    @Column(name = "Component_5")
+    private String component5;
+    @Basic(optional = false)
+    @Column(name = "Component_6")
+    private String component6;
+    @Basic(optional = false)
+    @Column(name = "Processing_Dinsity")
+    private BigDecimal processingDinsity;
+    @Basic(optional = false)
+    @Column(name = "BLF_Density")
+    private BigDecimal bLFDensity;
+    @Basic(optional = false)
+    @Column(name = "AKDG_Density")
+    private BigDecimal aKDGDensity;
+    @Basic(optional = false)
+    @Column(name = "OTG_Density")
+    private BigDecimal oTGDensity;
     @Basic(optional = false)
     @Column(name = "otg_uppg_startLevel")
     private long otguppgstartLevel;
@@ -314,64 +398,60 @@ public class VactUPPG implements Serializable {
     @Basic(optional = false)
     @Column(name = "otg_uppg_endDensity20")
     private BigDecimal otguppgendDensity20;
-    @Column(name = "otg_uppg_Volume")
-    private BigInteger otguppgVolume;
-    @Column(name = "otg_uppg_Mass")
-    private BigInteger otguppgMass;
     @Basic(optional = false)
     @Column(name = "otg_uppg_startTemp")
     private BigDecimal otguppgstartTemp;
     @Basic(optional = false)
     @Column(name = "otg_uppg_endTemp")
     private BigDecimal otguppgendTemp;
-    @Column(name = "otg_tsp_Volume")
-    private BigInteger otgtspVolume;
-    @Column(name = "otg_tsp_Mass")
-    private BigInteger otgtspMass;
     @Basic(optional = false)
-    @Column(name = "feed_startData")
-    private int feedstartData;
+    @Column(name = "E9_Gravity")
+    private BigDecimal e9Gravity;
     @Basic(optional = false)
-    @Column(name = "feed_finishData")
-    private int feedfinishData;
-    @Column(name = "feed_total")
-    private Integer feedTotal;
-    @Column(name = "Component_1")
-    private String component1;
+    @Column(name = "loadVolume")
+    private long loadVolume;
     @Basic(optional = false)
-    @Column(name = "Percent_1")
-    private double percent1;
-    @Column(name = "Component_2")
-    private String component2;
+    @Column(name = "loadDensity")
+    private BigDecimal loadDensity;
+    @Column(name = "loadMass")
+    private BigDecimal loadMass;
     @Basic(optional = false)
-    @Column(name = "Percent_2")
-    private double percent2;
-    @Column(name = "Component_3")
-    private String component3;
+    @Column(name = "loadTemp")
+    private BigDecimal loadTemp;
     @Basic(optional = false)
-    @Column(name = "Percent_3")
-    private double percent3;
-    @Column(name = "Component_4")
-    private String component4;
+    @Column(name = "loadDensity20")
+    private BigDecimal loadDensity20;
     @Basic(optional = false)
-    @Column(name = "Percent_4")
-    private double percent4;
-    @Column(name = "Component_5")
-    private String component5;
-    @Basic(optional = false)
-    @Column(name = "Percent_5")
-    private double percent5;
-    @Basic(optional = false)
-    @Column(name = "drained_BLF")
-    private BigDecimal drainedBLF;
-    @Basic(optional = false)
-    @Column(name = "Percent_6")
-    private double percent6;
-    @Column(name = "Component_6")
-    private String component6;
-    @Basic(optional = false)
-    @Column(name = "Tank_Name")
-    private String tankName;
+    @Column(name = "maxTempFurnace")
+    private BigDecimal maxTempFurnace;
+    @Column(name = "MassStart_R")
+    private BigDecimal massStartR;
+    @Column(name = "VolumeStart_R")
+    private BigDecimal volumeStartR;
+    @Column(name = "DensityStart_R")
+    private BigDecimal densityStartR;
+    @Column(name = "MassEnd_R")
+    private BigDecimal massEndR;
+    @Column(name = "VolumeEnd_R")
+    private BigDecimal volumeEndR;
+    @Column(name = "RVO_Percent")
+    private BigDecimal rVOPercent;
+    @Column(name = "RVO_Mass")
+    private BigDecimal rVOMass;
+    @Column(name = "RVO_Volume")
+    private BigDecimal rVOVolume;
+    @Column(name = "RVO_Density")
+    private BigDecimal rVODensity;
+    @Column(name = "TempStart_R")
+    private BigDecimal tempStartR;
+    @Column(name = "TempEnd_R")
+    private BigDecimal tempEndR;
+    @Column(name = "DensityEnd_R")
+    private BigDecimal densityEndR;
+    @Column(name = "rvoDensity20_Start")
+    private BigDecimal rvoDensity20Start;
+    @Column(name = "rvoDensity20_End")
+    private BigDecimal rvoDensity20End;
 
     public VactUPPG() {
     }
@@ -792,6 +872,238 @@ public class VactUPPG implements Serializable {
         this.drained = drained;
     }
 
+    public BigInteger getOtguppgVolume() {
+        return otguppgVolume;
+    }
+
+    public void setOtguppgVolume(BigInteger otguppgVolume) {
+        this.otguppgVolume = otguppgVolume;
+    }
+
+    public BigDecimal getOtguppgMass() {
+        return otguppgMass;
+    }
+
+    public void setOtguppgMass(BigDecimal otguppgMass) {
+        this.otguppgMass = otguppgMass;
+    }
+
+    public BigInteger getOtgtspVolume() {
+        return otgtspVolume;
+    }
+
+    public void setOtgtspVolume(BigInteger otgtspVolume) {
+        this.otgtspVolume = otgtspVolume;
+    }
+
+    public BigDecimal getOtgtspMass() {
+        return otgtspMass;
+    }
+
+    public void setOtgtspMass(BigDecimal otgtspMass) {
+        this.otgtspMass = otgtspMass;
+    }
+
+    public int getFeedstartData() {
+        return feedstartData;
+    }
+
+    public void setFeedstartData(int feedstartData) {
+        this.feedstartData = feedstartData;
+    }
+
+    public int getFeedfinishData() {
+        return feedfinishData;
+    }
+
+    public void setFeedfinishData(int feedfinishData) {
+        this.feedfinishData = feedfinishData;
+    }
+
+    public Integer getFeedTotal() {
+        return feedTotal;
+    }
+
+    public void setFeedTotal(Integer feedTotal) {
+        this.feedTotal = feedTotal;
+    }
+
+    public double getPercent1() {
+        return percent1;
+    }
+
+    public void setPercent1(double percent1) {
+        this.percent1 = percent1;
+    }
+
+    public double getPercent2() {
+        return percent2;
+    }
+
+    public void setPercent2(double percent2) {
+        this.percent2 = percent2;
+    }
+
+    public double getPercent3() {
+        return percent3;
+    }
+
+    public void setPercent3(double percent3) {
+        this.percent3 = percent3;
+    }
+
+    public double getPercent4() {
+        return percent4;
+    }
+
+    public void setPercent4(double percent4) {
+        this.percent4 = percent4;
+    }
+
+    public double getPercent5() {
+        return percent5;
+    }
+
+    public void setPercent5(double percent5) {
+        this.percent5 = percent5;
+    }
+
+    public BigDecimal getDrainedBLF() {
+        return drainedBLF;
+    }
+
+    public void setDrainedBLF(BigDecimal drainedBLF) {
+        this.drainedBLF = drainedBLF;
+    }
+
+    public double getPercent6() {
+        return percent6;
+    }
+
+    public void setPercent6(double percent6) {
+        this.percent6 = percent6;
+    }
+
+    public String getTankName() {
+        return tankName;
+    }
+
+    public void setTankName(String tankName) {
+        this.tankName = tankName;
+    }
+
+    public BigDecimal getSirieVolume() {
+        return sirieVolume;
+    }
+
+    public void setSirieVolume(BigDecimal sirieVolume) {
+        this.sirieVolume = sirieVolume;
+    }
+
+    public BigDecimal getSirieDensity() {
+        return sirieDensity;
+    }
+
+    public void setSirieDensity(BigDecimal sirieDensity) {
+        this.sirieDensity = sirieDensity;
+    }
+
+    public BigDecimal getSirieMass() {
+        return sirieMass;
+    }
+
+    public void setSirieMass(BigDecimal sirieMass) {
+        this.sirieMass = sirieMass;
+    }
+
+    public BigDecimal getMaxValue() {
+        return maxValue;
+    }
+
+    public void setMaxValue(BigDecimal maxValue) {
+        this.maxValue = maxValue;
+    }
+
+    public String getComponent1() {
+        return component1;
+    }
+
+    public void setComponent1(String component1) {
+        this.component1 = component1;
+    }
+
+    public String getComponent2() {
+        return component2;
+    }
+
+    public void setComponent2(String component2) {
+        this.component2 = component2;
+    }
+
+    public String getComponent3() {
+        return component3;
+    }
+
+    public void setComponent3(String component3) {
+        this.component3 = component3;
+    }
+
+    public String getComponent4() {
+        return component4;
+    }
+
+    public void setComponent4(String component4) {
+        this.component4 = component4;
+    }
+
+    public String getComponent5() {
+        return component5;
+    }
+
+    public void setComponent5(String component5) {
+        this.component5 = component5;
+    }
+
+    public String getComponent6() {
+        return component6;
+    }
+
+    public void setComponent6(String component6) {
+        this.component6 = component6;
+    }
+
+    public BigDecimal getProcessingDinsity() {
+        return processingDinsity;
+    }
+
+    public void setProcessingDinsity(BigDecimal processingDinsity) {
+        this.processingDinsity = processingDinsity;
+    }
+
+    public BigDecimal getBLFDensity() {
+        return bLFDensity;
+    }
+
+    public void setBLFDensity(BigDecimal bLFDensity) {
+        this.bLFDensity = bLFDensity;
+    }
+
+    public BigDecimal getAKDGDensity() {
+        return aKDGDensity;
+    }
+
+    public void setAKDGDensity(BigDecimal aKDGDensity) {
+        this.aKDGDensity = aKDGDensity;
+    }
+
+    public BigDecimal getOTGDensity() {
+        return oTGDensity;
+    }
+
+    public void setOTGDensity(BigDecimal oTGDensity) {
+        this.oTGDensity = oTGDensity;
+    }
+
     public long getOtguppgstartLevel() {
         return otguppgstartLevel;
     }
@@ -872,22 +1184,6 @@ public class VactUPPG implements Serializable {
         this.otguppgendDensity20 = otguppgendDensity20;
     }
 
-    public BigInteger getOtguppgVolume() {
-        return otguppgVolume;
-    }
-
-    public void setOtguppgVolume(BigInteger otguppgVolume) {
-        this.otguppgVolume = otguppgVolume;
-    }
-
-    public BigInteger getOtguppgMass() {
-        return otguppgMass;
-    }
-
-    public void setOtguppgMass(BigInteger otguppgMass) {
-        this.otguppgMass = otguppgMass;
-    }
-
     public BigDecimal getOtguppgstartTemp() {
         return otguppgstartTemp;
     }
@@ -904,220 +1200,172 @@ public class VactUPPG implements Serializable {
         this.otguppgendTemp = otguppgendTemp;
     }
 
-    public BigInteger getOtgtspVolume() {
-        return otgtspVolume;
+    public BigDecimal getE9Gravity() {
+        return e9Gravity;
     }
 
-    public void setOtgtspVolume(BigInteger otgtspVolume) {
-        this.otgtspVolume = otgtspVolume;
+    public void setE9Gravity(BigDecimal e9Gravity) {
+        this.e9Gravity = e9Gravity;
     }
 
-    public BigInteger getOtgtspMass() {
-        return otgtspMass;
+    public long getLoadVolume() {
+        return loadVolume;
     }
 
-    public void setOtgtspMass(BigInteger otgtspMass) {
-        this.otgtspMass = otgtspMass;
+    public void setLoadVolume(long loadVolume) {
+        this.loadVolume = loadVolume;
     }
 
-    public int getFeedstartData() {
-        return feedstartData;
+    public BigDecimal getLoadDensity() {
+        return loadDensity;
     }
 
-    public void setFeedstartData(int feedstartData) {
-        this.feedstartData = feedstartData;
+    public void setLoadDensity(BigDecimal loadDensity) {
+        this.loadDensity = loadDensity;
     }
 
-    public int getFeedfinishData() {
-        return feedfinishData;
+    public BigDecimal getLoadMass() {
+        return loadMass;
     }
 
-    public void setFeedfinishData(int feedfinishData) {
-        this.feedfinishData = feedfinishData;
+    public void setLoadMass(BigDecimal loadMass) {
+        this.loadMass = loadMass;
     }
 
-    public Integer getFeedTotal() {
-        return feedTotal;
+    public BigDecimal getLoadTemp() {
+        return loadTemp;
     }
 
-    public void setFeedTotal(Integer feedTotal) {
-        this.feedTotal = feedTotal;
+    public void setLoadTemp(BigDecimal loadTemp) {
+        this.loadTemp = loadTemp;
     }
 
-    public String getComponent1() {
-        return component1;
+    public BigDecimal getLoadDensity20() {
+        return loadDensity20;
     }
 
-    public void setComponent1(String component1) {
-        this.component1 = component1;
+    public void setLoadDensity20(BigDecimal loadDensity20) {
+        this.loadDensity20 = loadDensity20;
     }
 
-    public double getPercent1() {
-        return percent1;
+    public BigDecimal getMaxTempFurnace() {
+        return maxTempFurnace;
     }
 
-    public void setPercent1(double percent1) {
-        this.percent1 = percent1;
+    public void setMaxTempFurnace(BigDecimal maxTempFurnace) {
+        this.maxTempFurnace = maxTempFurnace;
     }
 
-    public String getComponent2() {
-        return component2;
+    public BigDecimal getMassStartR() {
+        return massStartR;
     }
 
-    public void setComponent2(String component2) {
-        this.component2 = component2;
+    public void setMassStartR(BigDecimal massStartR) {
+        this.massStartR = massStartR;
     }
 
-    public double getPercent2() {
-        return percent2;
+    public BigDecimal getVolumeStartR() {
+        return volumeStartR;
     }
 
-    public void setPercent2(double percent2) {
-        this.percent2 = percent2;
+    public void setVolumeStartR(BigDecimal volumeStartR) {
+        this.volumeStartR = volumeStartR;
     }
 
-    public String getComponent3() {
-        return component3;
+    public BigDecimal getDensityStartR() {
+        return densityStartR;
     }
 
-    public void setComponent3(String component3) {
-        this.component3 = component3;
+    public void setDensityStartR(BigDecimal densityStartR) {
+        this.densityStartR = densityStartR;
     }
 
-    public double getPercent3() {
-        return percent3;
+    public BigDecimal getMassEndR() {
+        return massEndR;
     }
 
-    public void setPercent3(double percent3) {
-        this.percent3 = percent3;
+    public void setMassEndR(BigDecimal massEndR) {
+        this.massEndR = massEndR;
     }
 
-    public String getComponent4() {
-        return component4;
+    public BigDecimal getVolumeEndR() {
+        return volumeEndR;
     }
 
-    public void setComponent4(String component4) {
-        this.component4 = component4;
+    public void setVolumeEndR(BigDecimal volumeEndR) {
+        this.volumeEndR = volumeEndR;
     }
 
-    public double getPercent4() {
-        return percent4;
+    public BigDecimal getRVOPercent() {
+        return rVOPercent;
     }
 
-    public void setPercent4(double percent4) {
-        this.percent4 = percent4;
+    public void setRVOPercent(BigDecimal rVOPercent) {
+        this.rVOPercent = rVOPercent;
     }
 
-    public String getComponent5() {
-        return component5;
+    public BigDecimal getRVOMass() {
+        return rVOMass;
     }
 
-    public void setComponent5(String component5) {
-        this.component5 = component5;
+    public void setRVOMass(BigDecimal rVOMass) {
+        this.rVOMass = rVOMass;
     }
 
-    public double getPercent5() {
-        return percent5;
+    public BigDecimal getRVOVolume() {
+        return rVOVolume;
     }
 
-    public void setPercent5(double percent5) {
-        this.percent5 = percent5;
+    public void setRVOVolume(BigDecimal rVOVolume) {
+        this.rVOVolume = rVOVolume;
     }
 
-    public BigDecimal getDrainedBLF() {
-        return drainedBLF;
+    public BigDecimal getRVODensity() {
+        return rVODensity;
     }
 
-    public void setDrainedBLF(BigDecimal drainedBLF) {
-        this.drainedBLF = drainedBLF;
+    public void setRVODensity(BigDecimal rVODensity) {
+        this.rVODensity = rVODensity;
     }
 
-    public double getPercent6() {
-        return percent6;
+    public BigDecimal getTempStartR() {
+        return tempStartR;
     }
 
-    public void setPercent6(double percent6) {
-        this.percent6 = percent6;
+    public void setTempStartR(BigDecimal tempStartR) {
+        this.tempStartR = tempStartR;
     }
 
-    public String getComponent6() {
-        return component6;
+    public BigDecimal getTempEndR() {
+        return tempEndR;
     }
 
-    public void setComponent6(String component6) {
-        this.component6 = component6;
+    public void setTempEndR(BigDecimal tempEndR) {
+        this.tempEndR = tempEndR;
     }
 
-    public String getTankName() {
-        return tankName;
+    public BigDecimal getDensityEndR() {
+        return densityEndR;
     }
 
-    public void setTankName(String tankName) {
-        this.tankName = tankName;
+    public void setDensityEndR(BigDecimal densityEndR) {
+        this.densityEndR = densityEndR;
     }
 
-    public BigDecimal getSirieVolume() {
-        return sirieVolume;
+    public BigDecimal getRvoDensity20Start() {
+        return rvoDensity20Start;
     }
 
-    public void setSirieVolume(BigDecimal sirieVolume) {
-        this.sirieVolume = sirieVolume;
+    public void setRvoDensity20Start(BigDecimal rvoDensity20Start) {
+        this.rvoDensity20Start = rvoDensity20Start;
     }
 
-    public BigDecimal getSirieDensity() {
-        return sirieDensity;
+    public BigDecimal getRvoDensity20End() {
+        return rvoDensity20End;
     }
 
-    public void setSirieDensity(BigDecimal sirieDensity) {
-        this.sirieDensity = sirieDensity;
-    }
-
-    public BigDecimal getSirieMass() {
-        return sirieMass;
-    }
-
-    public void setSirieMass(BigDecimal sirieMass) {
-        this.sirieMass = sirieMass;
-    }
-
-    public BigDecimal getMaxValue() {
-        return maxValue;
-    }
-
-    public void setMaxValue(BigDecimal maxValue) {
-        this.maxValue = maxValue;
-    }
-
-    public BigDecimal getProcessingDinsity() {
-        return processingDinsity;
-    }
-
-    public void setProcessingDinsity(BigDecimal processingDinsity) {
-        this.processingDinsity = processingDinsity;
-    }
-
-    public BigDecimal getBLFDensity() {
-        return bLFDensity;
-    }
-
-    public void setBLFDensity(BigDecimal bLFDensity) {
-        this.bLFDensity = bLFDensity;
-    }
-
-    public BigDecimal getAKDGDensity() {
-        return aKDGDensity;
-    }
-
-    public void setAKDGDensity(BigDecimal aKDGDensity) {
-        this.aKDGDensity = aKDGDensity;
-    }
-
-    public BigDecimal getOTGDensity() {
-        return oTGDensity;
-    }
-
-    public void setOTGDensity(BigDecimal oTGDensity) {
-        this.oTGDensity = oTGDensity;
+    public void setRvoDensity20End(BigDecimal rvoDensity20End) {
+        this.rvoDensity20End = rvoDensity20End;
     }
     
 }

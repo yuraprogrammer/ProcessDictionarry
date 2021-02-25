@@ -21,24 +21,23 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author yura_
  */
 @Entity
-@Table(name = "Act_UPPG", catalog = "Alexprom_ASUTP", schema = "dbo")
+@Table(name = "Act_UPPG")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "ActUPPG.findAll", query = "SELECT a FROM ActUPPG a"),
     @NamedQuery(name = "ActUPPG.findById", query = "SELECT a FROM ActUPPG a WHERE a.id = :id"),
     @NamedQuery(name = "ActUPPG.findByADate", query = "SELECT a FROM ActUPPG a WHERE a.aDate = :aDate"),
+    @NamedQuery(name = "ActUPPG.findByDateShift", query = "SELECT a FROM ActUPPG a WHERE a.aDate = :aDate AND a.aShift = :aShift"),
     @NamedQuery(name = "ActUPPG.findByAShift", query = "SELECT a FROM ActUPPG a WHERE a.aShift = :aShift"),
     @NamedQuery(name = "ActUPPG.findByMainOper", query = "SELECT a FROM ActUPPG a WHERE a.mainOper = :mainOper"),
     @NamedQuery(name = "ActUPPG.findBySlaveOper", query = "SELECT a FROM ActUPPG a WHERE a.slaveOper = :slaveOper"),
     @NamedQuery(name = "ActUPPG.findByComplete", query = "SELECT a FROM ActUPPG a WHERE a.complete = :complete"),
     @NamedQuery(name = "ActUPPG.findByACode", query = "SELECT a FROM ActUPPG a WHERE a.aCode = :aCode"),
-    @NamedQuery(name = "ActUPPG.findByDateShift", query = "SELECT a FROM ActUPPG a WHERE a.aDate = :aDate AND a.aShift = :aShift")})
+    @NamedQuery(name = "ActUPPG.findByMaxValue", query = "SELECT a FROM ActUPPG a WHERE a.maxValue = :maxValue"),
+    @NamedQuery(name = "ActUPPG.findByMaxTempFurnace", query = "SELECT a FROM ActUPPG a WHERE a.maxTempFurnace = :maxTempFurnace")})
 public class ActUPPG implements Serializable {
 
-    @Basic(optional = false)
-    @Column(name = "maxTempFurnace")
-    private BigDecimal maxTempFurnace;
-
+    private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "ID")
@@ -63,8 +62,9 @@ public class ActUPPG implements Serializable {
     @Basic(optional = false)
     @Column(name = "maxValue")
     private BigDecimal maxValue;
-
-    private static final long serialVersionUID = 1L;    
+    @Basic(optional = false)
+    @Column(name = "maxTempFurnace")
+    private BigDecimal maxTempFurnace;
 
     public ActUPPG() {
     }
@@ -73,12 +73,14 @@ public class ActUPPG implements Serializable {
         this.id = id;
     }
 
-    public ActUPPG(Long id, int mainOper, int slaveOper, int complete, int aCode) {
+    public ActUPPG(Long id, int mainOper, int slaveOper, int complete, int aCode, BigDecimal maxValue, BigDecimal maxTempFurnace) {
         this.id = id;
         this.mainOper = mainOper;
         this.slaveOper = slaveOper;
         this.complete = complete;
         this.aCode = aCode;
+        this.maxValue = maxValue;
+        this.maxTempFurnace = maxTempFurnace;
     }
 
     public Long getId() {
@@ -137,6 +139,22 @@ public class ActUPPG implements Serializable {
         this.aCode = aCode;
     }
 
+    public BigDecimal getMaxValue() {
+        return maxValue;
+    }
+
+    public void setMaxValue(BigDecimal maxValue) {
+        this.maxValue = maxValue;
+    }
+
+    public BigDecimal getMaxTempFurnace() {
+        return maxTempFurnace;
+    }
+
+    public void setMaxTempFurnace(BigDecimal maxTempFurnace) {
+        this.maxTempFurnace = maxTempFurnace;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -160,32 +178,6 @@ public class ActUPPG implements Serializable {
     @Override
     public String toString() {
         return "com.alexprom.entities.process.ActUPPG[ id=" + id + " ]";
-    }
-
-    
-    public ActUPPG(Long id, int mainOper, int slaveOper, int complete, int aCode, BigDecimal maxValue) {
-        this.id = id;
-        this.mainOper = mainOper;
-        this.slaveOper = slaveOper;
-        this.complete = complete;
-        this.aCode = aCode;
-        this.maxValue = maxValue;
-    }
-
-    public BigDecimal getMaxValue() {
-        return maxValue;
-    }
-
-    public void setMaxValue(BigDecimal maxValue) {
-        this.maxValue = maxValue;
-    }
-
-    public BigDecimal getMaxTempFurnace() {
-        return maxTempFurnace;
-    }
-
-    public void setMaxTempFurnace(BigDecimal maxTempFurnace) {
-        this.maxTempFurnace = maxTempFurnace;
     }
     
 }

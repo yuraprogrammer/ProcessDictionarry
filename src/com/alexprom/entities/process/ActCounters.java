@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.alexprom.entities.process;
 
 import java.io.Serializable;
@@ -16,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author yura_
  */
 @Entity
-@Table(name = "Act_Counters", catalog = "Alexprom_ASUTP", schema = "dbo")
+@Table(name = "Act_Counters")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "ActCounters.findAll", query = "SELECT a FROM ActCounters a"),
@@ -51,13 +56,32 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ActCounters.findByBLFMass", query = "SELECT a FROM ActCounters a WHERE a.bLFMass = :bLFMass"),
     @NamedQuery(name = "ActCounters.findByBLFVolume", query = "SELECT a FROM ActCounters a WHERE a.bLFVolume = :bLFVolume"),
     @NamedQuery(name = "ActCounters.findByAKDGMass", query = "SELECT a FROM ActCounters a WHERE a.aKDGMass = :aKDGMass"),
-    @NamedQuery(name = "ActCounters.findByAKDFVolume", query = "SELECT a FROM ActCounters a WHERE a.aKDFVolume = :aKDFVolume")})
+    @NamedQuery(name = "ActCounters.findByAKDFVolume", query = "SELECT a FROM ActCounters a WHERE a.aKDFVolume = :aKDFVolume"),
+    @NamedQuery(name = "ActCounters.findByBLFPercent", query = "SELECT a FROM ActCounters a WHERE a.bLFPercent = :bLFPercent"),
+    @NamedQuery(name = "ActCounters.findByAKDGPercent", query = "SELECT a FROM ActCounters a WHERE a.aKDGPercent = :aKDGPercent"),
+    @NamedQuery(name = "ActCounters.findByOTGPercent", query = "SELECT a FROM ActCounters a WHERE a.oTGPercent = :oTGPercent"),
+    @NamedQuery(name = "ActCounters.findByBLFAKDGPercent", query = "SELECT a FROM ActCounters a WHERE a.bLFAKDGPercent = :bLFAKDGPercent"),
+    @NamedQuery(name = "ActCounters.findByBLFAKDGOTGPercent", query = "SELECT a FROM ActCounters a WHERE a.bLFAKDGOTGPercent = :bLFAKDGOTGPercent"),
+    @NamedQuery(name = "ActCounters.findByProcessingDinsity", query = "SELECT a FROM ActCounters a WHERE a.processingDinsity = :processingDinsity"),
+    @NamedQuery(name = "ActCounters.findByBLFDensity", query = "SELECT a FROM ActCounters a WHERE a.bLFDensity = :bLFDensity"),
+    @NamedQuery(name = "ActCounters.findByAKDGDensity", query = "SELECT a FROM ActCounters a WHERE a.aKDGDensity = :aKDGDensity"),
+    @NamedQuery(name = "ActCounters.findByOTGDensity", query = "SELECT a FROM ActCounters a WHERE a.oTGDensity = :oTGDensity"),
+    @NamedQuery(name = "ActCounters.findByE9Gravity", query = "SELECT a FROM ActCounters a WHERE a.e9Gravity = :e9Gravity"),
+    @NamedQuery(name = "ActCounters.findByMassStartR", query = "SELECT a FROM ActCounters a WHERE a.massStartR = :massStartR"),
+    @NamedQuery(name = "ActCounters.findByVolumeStartR", query = "SELECT a FROM ActCounters a WHERE a.volumeStartR = :volumeStartR"),
+    @NamedQuery(name = "ActCounters.findByDensityStartR", query = "SELECT a FROM ActCounters a WHERE a.densityStartR = :densityStartR"),
+    @NamedQuery(name = "ActCounters.findByMassEndR", query = "SELECT a FROM ActCounters a WHERE a.massEndR = :massEndR"),
+    @NamedQuery(name = "ActCounters.findByVolumeEndR", query = "SELECT a FROM ActCounters a WHERE a.volumeEndR = :volumeEndR"),
+    @NamedQuery(name = "ActCounters.findByRVOPercent", query = "SELECT a FROM ActCounters a WHERE a.rVOPercent = :rVOPercent"),
+    @NamedQuery(name = "ActCounters.findByRVOMass", query = "SELECT a FROM ActCounters a WHERE a.rVOMass = :rVOMass"),
+    @NamedQuery(name = "ActCounters.findByRVOVolume", query = "SELECT a FROM ActCounters a WHERE a.rVOVolume = :rVOVolume"),
+    @NamedQuery(name = "ActCounters.findByRVODensity", query = "SELECT a FROM ActCounters a WHERE a.rVODensity = :rVODensity"),
+    @NamedQuery(name = "ActCounters.findByTempStartR", query = "SELECT a FROM ActCounters a WHERE a.tempStartR = :tempStartR"),
+    @NamedQuery(name = "ActCounters.findByTempEndR", query = "SELECT a FROM ActCounters a WHERE a.tempEndR = :tempEndR"),
+    @NamedQuery(name = "ActCounters.findByDensityEndR", query = "SELECT a FROM ActCounters a WHERE a.densityEndR = :densityEndR")})
 public class ActCounters implements Serializable {
 
-    @Basic(optional = false)
-    @Column(name = "E9_Gravity")
-    private BigDecimal e9Gravity;
-
+    private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "id")
@@ -65,6 +89,104 @@ public class ActCounters implements Serializable {
     @Basic(optional = false)
     @Column(name = "actID")
     private long actID;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Basic(optional = false)
+    @Column(name = "MassStart_S")
+    private BigDecimal massStartS;
+    @Basic(optional = false)
+    @Column(name = "VolumeStart_S")
+    private BigDecimal volumeStartS;
+    @Basic(optional = false)
+    @Column(name = "TempStart_S")
+    private BigDecimal tempStartS;
+    @Basic(optional = false)
+    @Column(name = "DensityStart_S")
+    private BigDecimal densityStartS;
+    @Basic(optional = false)
+    @Column(name = "MassStart_B")
+    private BigDecimal massStartB;
+    @Basic(optional = false)
+    @Column(name = "VolumeStart_B")
+    private BigDecimal volumeStartB;
+    @Basic(optional = false)
+    @Column(name = "TempStart_B")
+    private BigDecimal tempStartB;
+    @Basic(optional = false)
+    @Column(name = "DensityStart_B")
+    private BigDecimal densityStartB;
+    @Basic(optional = false)
+    @Column(name = "MassStart_A")
+    private BigDecimal massStartA;
+    @Basic(optional = false)
+    @Column(name = "VolumeStart_A")
+    private BigDecimal volumeStartA;
+    @Basic(optional = false)
+    @Column(name = "TempStart_A")
+    private BigDecimal tempStartA;
+    @Basic(optional = false)
+    @Column(name = "DensityStart_A")
+    private BigDecimal densityStartA;
+    @Basic(optional = false)
+    @Column(name = "MassEnd_S")
+    private BigDecimal massEndS;
+    @Basic(optional = false)
+    @Column(name = "VolumeEnd_S")
+    private BigDecimal volumeEndS;
+    @Basic(optional = false)
+    @Column(name = "TempEnd_S")
+    private BigDecimal tempEndS;
+    @Basic(optional = false)
+    @Column(name = "DensityEnd_S")
+    private BigDecimal densityEndS;
+    @Basic(optional = false)
+    @Column(name = "MassEnd_B")
+    private BigDecimal massEndB;
+    @Basic(optional = false)
+    @Column(name = "VolumeEnd_B")
+    private BigDecimal volumeEndB;
+    @Basic(optional = false)
+    @Column(name = "TempEnd_B")
+    private BigDecimal tempEndB;
+    @Basic(optional = false)
+    @Column(name = "DensityEnd_B")
+    private BigDecimal densityEndB;
+    @Basic(optional = false)
+    @Column(name = "MassEnd_A")
+    private BigDecimal massEndA;
+    @Basic(optional = false)
+    @Column(name = "VolumeEnd_A")
+    private BigDecimal volumeEndA;
+    @Basic(optional = false)
+    @Column(name = "TempEnd_A")
+    private BigDecimal tempEndA;
+    @Basic(optional = false)
+    @Column(name = "DensityEnd_A")
+    private BigDecimal densityEndA;
+    @Column(name = "Processing_Mass")
+    private BigDecimal processingMass;
+    @Column(name = "Processing_Volume")
+    private BigDecimal processingVolume;
+    @Column(name = "BLF_Mass")
+    private BigDecimal bLFMass;
+    @Column(name = "BLF_Volume")
+    private BigDecimal bLFVolume;
+    @Column(name = "AKDG_Mass")
+    private BigDecimal aKDGMass;
+    @Column(name = "AKDF_Volume")
+    private BigDecimal aKDFVolume;
+    @Basic(optional = false)
+    @Column(name = "BLF_Percent")
+    private BigDecimal bLFPercent;
+    @Basic(optional = false)
+    @Column(name = "AKDG_Percent")
+    private BigDecimal aKDGPercent;
+    @Basic(optional = false)
+    @Column(name = "OTG_Percent")
+    private BigDecimal oTGPercent;
+    @Column(name = "BLF_AKDG_Percent")
+    private BigDecimal bLFAKDGPercent;
+    @Column(name = "BLF_AKDG_OTG_Percent")
+    private BigDecimal bLFAKDGOTGPercent;
     @Basic(optional = false)
     @Column(name = "Processing_Dinsity")
     private BigDecimal processingDinsity;
@@ -77,107 +199,33 @@ public class ActCounters implements Serializable {
     @Basic(optional = false)
     @Column(name = "OTG_Density")
     private BigDecimal oTGDensity;
-
-    
-    @Column(name = "BLF_AKDG_Percent", precision = 19, scale = 4, insertable = false, updatable = false)
-    private BigDecimal bLFAKDGPercent;
-    @Column(name = "BLF_AKDG_OTG_Percent", precision = 20, scale = 4, insertable = false, updatable = false)
-    private BigDecimal bLFAKDGOTGPercent;
-
-    @Column(name = "BLF_Percent", precision = 18, scale = 4)
-    private BigDecimal bLFPercent;
-    @Column(name = "AKDG_Percent", precision = 18, scale = 4)
-    private BigDecimal aKDGPercent;
-    @Column(name = "OTG_Percent", precision = 18, scale = 4)
-    private BigDecimal oTGPercent;
-
-    private static final long serialVersionUID = 1L;
-    
-    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
-    @Column(name = "MassStart_S", nullable = false, precision = 18, scale = 4)
-    private BigDecimal massStartS;
-    @Basic(optional = false)
-    @Column(name = "VolumeStart_S", nullable = false, precision = 18, scale = 4)
-    private BigDecimal volumeStartS;
-    @Basic(optional = false)
-    @Column(name = "TempStart_S", nullable = false, precision = 18, scale = 4)
-    private BigDecimal tempStartS;
-    @Basic(optional = false)
-    @Column(name = "DensityStart_S", nullable = false, precision = 18, scale = 4)
-    private BigDecimal densityStartS;
-    @Basic(optional = false)
-    @Column(name = "MassStart_B", nullable = false, precision = 18, scale = 4)
-    private BigDecimal massStartB;
-    @Basic(optional = false)
-    @Column(name = "VolumeStart_B", nullable = false, precision = 18, scale = 4)
-    private BigDecimal volumeStartB;
-    @Basic(optional = false)
-    @Column(name = "TempStart_B", nullable = false, precision = 18, scale = 4)
-    private BigDecimal tempStartB;
-    @Basic(optional = false)
-    @Column(name = "DensityStart_B", nullable = false, precision = 18, scale = 4)
-    private BigDecimal densityStartB;
-    @Basic(optional = false)
-    @Column(name = "MassStart_A", nullable = false, precision = 18, scale = 4)
-    private BigDecimal massStartA;
-    @Basic(optional = false)
-    @Column(name = "VolumeStart_A", nullable = false, precision = 18, scale = 4)
-    private BigDecimal volumeStartA;
-    @Basic(optional = false)
-    @Column(name = "TempStart_A", nullable = false, precision = 18, scale = 4)
-    private BigDecimal tempStartA;
-    @Basic(optional = false)
-    @Column(name = "DensityStart_A", nullable = false, precision = 18, scale = 4)
-    private BigDecimal densityStartA;
-    @Basic(optional = false)
-    @Column(name = "MassEnd_S", nullable = false, precision = 18, scale = 4)
-    private BigDecimal massEndS;
-    @Basic(optional = false)
-    @Column(name = "VolumeEnd_S", nullable = false, precision = 18, scale = 4)
-    private BigDecimal volumeEndS;
-    @Basic(optional = false)
-    @Column(name = "TempEnd_S", nullable = false, precision = 18, scale = 4)
-    private BigDecimal tempEndS;
-    @Basic(optional = false)
-    @Column(name = "DensityEnd_S", nullable = false, precision = 18, scale = 4)
-    private BigDecimal densityEndS;
-    @Basic(optional = false)
-    @Column(name = "MassEnd_B", nullable = false, precision = 18, scale = 4)
-    private BigDecimal massEndB;
-    @Basic(optional = false)
-    @Column(name = "VolumeEnd_B", nullable = false, precision = 18, scale = 4)
-    private BigDecimal volumeEndB;
-    @Basic(optional = false)
-    @Column(name = "TempEnd_B", nullable = false, precision = 18, scale = 4)
-    private BigDecimal tempEndB;
-    @Basic(optional = false)
-    @Column(name = "DensityEnd_B", nullable = false, precision = 18, scale = 4)
-    private BigDecimal densityEndB;
-    @Basic(optional = false)
-    @Column(name = "MassEnd_A", nullable = false, precision = 18, scale = 4)
-    private BigDecimal massEndA;
-    @Basic(optional = false)
-    @Column(name = "VolumeEnd_A", nullable = false, precision = 18, scale = 4)
-    private BigDecimal volumeEndA;
-    @Basic(optional = false)
-    @Column(name = "TempEnd_A", nullable = false, precision = 18, scale = 4)
-    private BigDecimal tempEndA;
-    @Basic(optional = false)
-    @Column(name = "DensityEnd_A", nullable = false, precision = 18, scale = 4)
-    private BigDecimal densityEndA;
-    @Column(name = "Processing_Mass", precision = 19, scale = 4, insertable = false, updatable = false)
-    private BigDecimal processingMass;
-    @Column(name = "Processing_Volume", precision = 19, scale = 4, insertable = false, updatable = false)
-    private BigDecimal processingVolume;
-    @Column(name = "BLF_Mass", precision = 19, scale = 4, insertable = false, updatable = false)
-    private BigDecimal bLFMass;
-    @Column(name = "BLF_Volume", precision = 19, scale = 4, insertable = false, updatable = false)
-    private BigDecimal bLFVolume;
-    @Column(name = "AKDG_Mass", precision = 19, scale = 4, insertable = false, updatable = false)
-    private BigDecimal aKDGMass;
-    @Column(name = "AKDF_Volume", precision = 19, scale = 4, insertable = false, updatable = false)
-    private BigDecimal aKDFVolume;
+    @Column(name = "E9_Gravity")
+    private BigDecimal e9Gravity;
+    @Column(name = "MassStart_R")
+    private BigDecimal massStartR;
+    @Column(name = "VolumeStart_R")
+    private BigDecimal volumeStartR;
+    @Column(name = "DensityStart_R")
+    private BigDecimal densityStartR;
+    @Column(name = "MassEnd_R")
+    private BigDecimal massEndR;
+    @Column(name = "VolumeEnd_R")
+    private BigDecimal volumeEndR;
+    @Column(name = "RVO_Percent")
+    private BigDecimal rVOPercent;
+    @Column(name = "RVO_Mass")
+    private BigDecimal rVOMass;
+    @Column(name = "RVO_Volume")
+    private BigDecimal rVOVolume;
+    @Column(name = "RVO_Density")
+    private BigDecimal rVODensity;
+    @Column(name = "TempStart_R")
+    private BigDecimal tempStartR;
+    @Column(name = "TempEnd_R")
+    private BigDecimal tempEndR;
+    @Column(name = "DensityEnd_R")
+    private BigDecimal densityEndR;
 
     public ActCounters() {
     }
@@ -186,7 +234,7 @@ public class ActCounters implements Serializable {
         this.id = id;
     }
 
-    public ActCounters(Long id, long actID, BigDecimal massStartS, BigDecimal volumeStartS, BigDecimal tempStartS, BigDecimal densityStartS, BigDecimal massStartB, BigDecimal volumeStartB, BigDecimal tempStartB, BigDecimal densityStartB, BigDecimal massStartA, BigDecimal volumeStartA, BigDecimal tempStartA, BigDecimal densityStartA, BigDecimal massEndS, BigDecimal volumeEndS, BigDecimal tempEndS, BigDecimal densityEndS, BigDecimal massEndB, BigDecimal volumeEndB, BigDecimal tempEndB, BigDecimal densityEndB, BigDecimal massEndA, BigDecimal volumeEndA, BigDecimal tempEndA, BigDecimal densityEndA) {
+    public ActCounters(Long id, long actID, BigDecimal massStartS, BigDecimal volumeStartS, BigDecimal tempStartS, BigDecimal densityStartS, BigDecimal massStartB, BigDecimal volumeStartB, BigDecimal tempStartB, BigDecimal densityStartB, BigDecimal massStartA, BigDecimal volumeStartA, BigDecimal tempStartA, BigDecimal densityStartA, BigDecimal massEndS, BigDecimal volumeEndS, BigDecimal tempEndS, BigDecimal densityEndS, BigDecimal massEndB, BigDecimal volumeEndB, BigDecimal tempEndB, BigDecimal densityEndB, BigDecimal massEndA, BigDecimal volumeEndA, BigDecimal tempEndA, BigDecimal densityEndA, BigDecimal bLFPercent, BigDecimal aKDGPercent, BigDecimal oTGPercent, BigDecimal processingDinsity, BigDecimal bLFDensity, BigDecimal aKDGDensity, BigDecimal oTGDensity, BigDecimal e9Gravity) {
         this.id = id;
         this.actID = actID;
         this.massStartS = massStartS;
@@ -213,6 +261,14 @@ public class ActCounters implements Serializable {
         this.volumeEndA = volumeEndA;
         this.tempEndA = tempEndA;
         this.densityEndA = densityEndA;
+        this.bLFPercent = bLFPercent;
+        this.aKDGPercent = aKDGPercent;
+        this.oTGPercent = oTGPercent;
+        this.processingDinsity = processingDinsity;
+        this.bLFDensity = bLFDensity;
+        this.aKDGDensity = aKDGDensity;
+        this.oTGDensity = oTGDensity;
+        this.e9Gravity = e9Gravity;
     }
 
     public Long getId() {
@@ -471,36 +527,6 @@ public class ActCounters implements Serializable {
         this.aKDFVolume = aKDFVolume;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof ActCounters)) {
-            return false;
-        }
-        ActCounters other = (ActCounters) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "com.alexprom.entities.process.ActCounters[ id=" + id + " ]";
-    }
-
-    public ActCounters(Long id, long actID) {
-        this.id = id;
-        this.actID = actID;
-    }   
-
     public BigDecimal getBLFPercent() {
         return bLFPercent;
     }
@@ -539,16 +565,6 @@ public class ActCounters implements Serializable {
 
     public void setBLFAKDGOTGPercent(BigDecimal bLFAKDGOTGPercent) {
         this.bLFAKDGOTGPercent = bLFAKDGOTGPercent;
-    }
-
-    
-    public ActCounters(Long id, long actID, BigDecimal processingDinsity, BigDecimal bLFDensity, BigDecimal aKDGDensity, BigDecimal oTGDensity) {
-        this.id = id;
-        this.actID = actID;
-        this.processingDinsity = processingDinsity;
-        this.bLFDensity = bLFDensity;
-        this.aKDGDensity = aKDGDensity;
-        this.oTGDensity = oTGDensity;
     }
 
     public BigDecimal getProcessingDinsity() {
@@ -591,6 +607,125 @@ public class ActCounters implements Serializable {
         this.e9Gravity = e9Gravity;
     }
 
-   
-        
+    public BigDecimal getMassStartR() {
+        return massStartR;
+    }
+
+    public void setMassStartR(BigDecimal massStartR) {
+        this.massStartR = massStartR;
+    }
+
+    public BigDecimal getVolumeStartR() {
+        return volumeStartR;
+    }
+
+    public void setVolumeStartR(BigDecimal volumeStartR) {
+        this.volumeStartR = volumeStartR;
+    }
+
+    public BigDecimal getDensityStartR() {
+        return densityStartR;
+    }
+
+    public void setDensityStartR(BigDecimal densityStartR) {
+        this.densityStartR = densityStartR;
+    }
+
+    public BigDecimal getMassEndR() {
+        return massEndR;
+    }
+
+    public void setMassEndR(BigDecimal massEndR) {
+        this.massEndR = massEndR;
+    }
+
+    public BigDecimal getVolumeEndR() {
+        return volumeEndR;
+    }
+
+    public void setVolumeEndR(BigDecimal volumeEndR) {
+        this.volumeEndR = volumeEndR;
+    }
+
+    public BigDecimal getRVOPercent() {
+        return rVOPercent;
+    }
+
+    public void setRVOPercent(BigDecimal rVOPercent) {
+        this.rVOPercent = rVOPercent;
+    }
+
+    public BigDecimal getRVOMass() {
+        return rVOMass;
+    }
+
+    public void setRVOMass(BigDecimal rVOMass) {
+        this.rVOMass = rVOMass;
+    }
+
+    public BigDecimal getRVOVolume() {
+        return rVOVolume;
+    }
+
+    public void setRVOVolume(BigDecimal rVOVolume) {
+        this.rVOVolume = rVOVolume;
+    }
+
+    public BigDecimal getRVODensity() {
+        return rVODensity;
+    }
+
+    public void setRVODensity(BigDecimal rVODensity) {
+        this.rVODensity = rVODensity;
+    }
+
+    public BigDecimal getTempStartR() {
+        return tempStartR;
+    }
+
+    public void setTempStartR(BigDecimal tempStartR) {
+        this.tempStartR = tempStartR;
+    }
+
+    public BigDecimal getTempEndR() {
+        return tempEndR;
+    }
+
+    public void setTempEndR(BigDecimal tempEndR) {
+        this.tempEndR = tempEndR;
+    }
+
+    public BigDecimal getDensityEndR() {
+        return densityEndR;
+    }
+
+    public void setDensityEndR(BigDecimal densityEndR) {
+        this.densityEndR = densityEndR;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof ActCounters)) {
+            return false;
+        }
+        ActCounters other = (ActCounters) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.alexprom.entities.process.ActCounters[ id=" + id + " ]";
+    }
+    
 }

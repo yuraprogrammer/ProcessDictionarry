@@ -5,20 +5,15 @@ import javax.annotation.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2019-03-20T16:11:05")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2021-02-25T15:56:59")
 @StaticMetamodel(ActCounters.class)
 public class ActCounters_ { 
 
     public static volatile SingularAttribute<ActCounters, BigDecimal> tempStartA;
     public static volatile SingularAttribute<ActCounters, BigDecimal> densityStartA;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> oTGPercent;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> densityEndA;
     public static volatile SingularAttribute<ActCounters, BigDecimal> tempStartB;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> densityEndB;
     public static volatile SingularAttribute<ActCounters, BigDecimal> bLFPercent;
     public static volatile SingularAttribute<ActCounters, BigDecimal> aKDGDensity;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> massStartA;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> massStartB;
     public static volatile SingularAttribute<ActCounters, BigDecimal> densityStartB;
     public static volatile SingularAttribute<ActCounters, BigDecimal> processingMass;
     public static volatile SingularAttribute<ActCounters, BigDecimal> tempEndB;
@@ -27,18 +22,35 @@ public class ActCounters_ {
     public static volatile SingularAttribute<ActCounters, BigDecimal> massEndA;
     public static volatile SingularAttribute<ActCounters, BigDecimal> bLFVolume;
     public static volatile SingularAttribute<ActCounters, Long> id;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> bLFAKDGOTGPercent;
     public static volatile SingularAttribute<ActCounters, BigDecimal> densityStartS;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> volumeStartS;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> densityStartR;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> rVOVolume;
     public static volatile SingularAttribute<ActCounters, BigDecimal> bLFMass;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> oTGDensity;
     public static volatile SingularAttribute<ActCounters, BigDecimal> massEndS;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> tempEndS;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> massEndR;
     public static volatile SingularAttribute<ActCounters, Long> actID;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> densityEndS;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> e9Gravity;
     public static volatile SingularAttribute<ActCounters, BigDecimal> bLFDensity;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> e9Gravity;
     public static volatile SingularAttribute<ActCounters, BigDecimal> bLFAKDGPercent;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> tempStartS;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> tempStartR;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> massStartS;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> processingVolume;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> massStartR;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> oTGPercent;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> densityEndA;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> densityEndB;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> massStartA;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> massStartB;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> rVODensity;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> densityEndR;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> bLFAKDGOTGPercent;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> volumeStartR;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> volumeStartS;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> tempEndR;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> oTGDensity;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> tempEndS;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> densityEndS;
     public static volatile SingularAttribute<ActCounters, BigDecimal> volumeStartB;
     public static volatile SingularAttribute<ActCounters, BigDecimal> volumeEndA;
     public static volatile SingularAttribute<ActCounters, BigDecimal> volumeStartA;
@@ -46,10 +58,10 @@ public class ActCounters_ {
     public static volatile SingularAttribute<ActCounters, BigDecimal> processingDinsity;
     public static volatile SingularAttribute<ActCounters, BigDecimal> aKDFVolume;
     public static volatile SingularAttribute<ActCounters, BigDecimal> aKDGPercent;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> tempStartS;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> rVOPercent;
     public static volatile SingularAttribute<ActCounters, BigDecimal> aKDGMass;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> massStartS;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> rVOMass;
     public static volatile SingularAttribute<ActCounters, BigDecimal> volumeEndS;
-    public static volatile SingularAttribute<ActCounters, BigDecimal> processingVolume;
+    public static volatile SingularAttribute<ActCounters, BigDecimal> volumeEndR;
 
 }

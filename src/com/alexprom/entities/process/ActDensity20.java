@@ -21,7 +21,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author yura_
  */
 @Entity
-@Table(name = "Act_Density20", catalog = "Alexprom_ASUTP", schema = "dbo")
+@Table(name = "Act_Density20")
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "ActDensity20.findAll", query = "SELECT a FROM ActDensity20 a"),
@@ -32,36 +32,42 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "ActDensity20.findByBlfDensity20Start", query = "SELECT a FROM ActDensity20 a WHERE a.blfDensity20Start = :blfDensity20Start"),
     @NamedQuery(name = "ActDensity20.findByBlfDensity20End", query = "SELECT a FROM ActDensity20 a WHERE a.blfDensity20End = :blfDensity20End"),
     @NamedQuery(name = "ActDensity20.findByAkdgDensity20Start", query = "SELECT a FROM ActDensity20 a WHERE a.akdgDensity20Start = :akdgDensity20Start"),
-    @NamedQuery(name = "ActDensity20.findByAkdgDensity20End", query = "SELECT a FROM ActDensity20 a WHERE a.akdgDensity20End = :akdgDensity20End")})
+    @NamedQuery(name = "ActDensity20.findByAkdgDensity20End", query = "SELECT a FROM ActDensity20 a WHERE a.akdgDensity20End = :akdgDensity20End"),
+    @NamedQuery(name = "ActDensity20.findByRvoDensity20Start", query = "SELECT a FROM ActDensity20 a WHERE a.rvoDensity20Start = :rvoDensity20Start"),
+    @NamedQuery(name = "ActDensity20.findByRvoDensity20End", query = "SELECT a FROM ActDensity20 a WHERE a.rvoDensity20End = :rvoDensity20End")})
 public class ActDensity20 implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
-    @Column(nullable = false)
+    @Column(name = "ID")
     private Long id;
     @Basic(optional = false)
-    @Column(nullable = false)
+    @Column(name = "actID")
     private long actID;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Basic(optional = false)
-    @Column(name = "sirieDensity20_Start", nullable = false, precision = 18, scale = 4)
+    @Column(name = "sirieDensity20_Start")
     private BigDecimal sirieDensity20Start;
     @Basic(optional = false)
-    @Column(name = "sirieDensity20_End", nullable = false, precision = 18, scale = 4)
+    @Column(name = "sirieDensity20_End")
     private BigDecimal sirieDensity20End;
     @Basic(optional = false)
-    @Column(name = "blfDensity20_Start", nullable = false, precision = 18, scale = 4)
+    @Column(name = "blfDensity20_Start")
     private BigDecimal blfDensity20Start;
     @Basic(optional = false)
-    @Column(name = "blfDensity20_End", nullable = false, precision = 18, scale = 4)
+    @Column(name = "blfDensity20_End")
     private BigDecimal blfDensity20End;
     @Basic(optional = false)
-    @Column(name = "akdgDensity20_Start", nullable = false, precision = 18, scale = 4)
+    @Column(name = "akdgDensity20_Start")
     private BigDecimal akdgDensity20Start;
     @Basic(optional = false)
-    @Column(name = "akdgDensity20_End", nullable = false, precision = 18, scale = 4)
+    @Column(name = "akdgDensity20_End")
     private BigDecimal akdgDensity20End;
+    @Column(name = "rvoDensity20_Start")
+    private BigDecimal rvoDensity20Start;
+    @Column(name = "rvoDensity20_End")
+    private BigDecimal rvoDensity20End;
 
     public ActDensity20() {
     }
@@ -143,6 +149,22 @@ public class ActDensity20 implements Serializable {
 
     public void setAkdgDensity20End(BigDecimal akdgDensity20End) {
         this.akdgDensity20End = akdgDensity20End;
+    }
+
+    public BigDecimal getRvoDensity20Start() {
+        return rvoDensity20Start;
+    }
+
+    public void setRvoDensity20Start(BigDecimal rvoDensity20Start) {
+        this.rvoDensity20Start = rvoDensity20Start;
+    }
+
+    public BigDecimal getRvoDensity20End() {
+        return rvoDensity20End;
+    }
+
+    public void setRvoDensity20End(BigDecimal rvoDensity20End) {
+        this.rvoDensity20End = rvoDensity20End;
     }
 
     @Override
